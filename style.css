@@ -1,0 +1,208 @@
+/*$colpri:#9356DC;
+$colsec:#FF79DA;
+$colter:#99E2D0;
+$colgrey:#f4f4f4;
+$colfoot:#000000;
+$colgreyfosc:#e4e4e4;*/
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  width: 375px;
+  height: 63px;
+  margin: 10px auto;
+}
+
+/* PRESENTATION*/
+.presentation {
+  width: 375px;
+  height: 337px;
+  background-color: #f4f4f4;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px auto;
+}
+
+.presentation__localisation {
+  width: 375px;
+  height: 50px;
+  background-color: #e4e4e4;
+  border-top: inset 2px solid #4b4a4a;
+}
+
+.presentation__reservation {
+  position: relative;
+}
+
+.presentation__reservation__txt {
+  text-align: center;
+}
+
+/* FONCTIONNEMENT*/
+.fonctionnement {
+  width: 375px;
+  height: 400px;
+  margin: 10px auto;
+  border: 1px solid black;
+}
+
+.fonctionnement__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 323px;
+  height: 74px;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  margin: 10px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.fonctionnement__btn__num {
+  width: 24px;
+  height: 24px;
+  display: inline;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #9356DC;
+  border-radius: 50%;
+  margin-left: -10px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.fonctionnement__btn__logo {
+  margin: 0 20px;
+}
+
+.fonctionnement__btn__txt {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* RESTAURANTS*/
+.cards_rest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 1225px;
+  background-color: #f4f4f4;
+  width: 375px;
+  margin: 0px auto;
+}
+
+.cards_rest__titre {
+  width: 325px;
+  margin: 10px auto;
+}
+
+.cards_rest__lapalettedugout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 325px;
+  height: 251px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.cards_rest__lapalettedugout__img {
+  width: 325px;
+  height: 251px;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cards_rest__lapalettedugout__txts {
+  display: block;
+  width: 100%;
+  height: 75px;
+  margin: 0;
+  border-radius: 0 0 20px 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+}
+
+.cards_rest__lapalettedugout__txts__titre {
+  margin: 15px 0 0 15px;
+  padding: 0;
+}
+
+.cards_rest__lapalettedugout__txts__lieu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.cards_rest__lapalettedugout__txts__coeur-vide {
+  position: absolute;
+  size: 2x;
+  bottom: 30px;
+  right: 25px;
+  z-index: 1;
+  -webkit-animation: transform;
+          animation: transform;
+  cursor: pointer;
+}
+
+.footer {
+  width: 375px;
+  height: 200px;
+  background-color: #a7a4a4;
+  margin: 0 auto;
+}
+
+.footer__logo {
+  margin: 0px auto 0 20px;
+}
+
+.footer__logo__img {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  margin: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  padding-top: 20px;
+}
+
+.footer__liens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto 0px 20px;
+  padding: 5px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: white;
+}
+
+.footer__liens__txt {
+  margin: 5px;
+}
+/*# sourceMappingURL=style.css.map */
