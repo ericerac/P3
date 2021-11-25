@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /*$colpri:#9356DC;
 $colsec:#FF79DA;
 $colter:#99E2D0;
@@ -7,19 +9,47 @@ $colgreyfosc:#e4e4e4;*/
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 375px;
   height: 63px;
-  margin: 10px auto;
+  margin: 0px auto;
+  font-size: 23px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__fleche {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  visibility: hidden;
+}
+
+.header__logo__img {
+  margin-top: 20px;
+  height: 25px;
+}
+
+.fa-arrow-left {
+  height: 10px;
 }
 
 /* PRESENTATION*/
 .presentation {
   width: 375px;
   height: 337px;
-  background-color: #f4f4f4;
+  background-color: #f6f6f6;
   display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -28,18 +58,58 @@ body {
 }
 
 .presentation__localisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 375px;
   height: 50px;
-  background-color: #e4e4e4;
-  border-top: inset 2px solid #4b4a4a;
+  background-color: #ebebeb;
+  border-style: inset;
+  border-top: 2px solid #cfcfcf;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.presentation__localisation__logo {
+  margin: 10px;
 }
 
 .presentation__reservation {
   position: relative;
 }
 
+.presentation__reservation__titre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+  text-align-last: center;
+  font-weight: bolder;
+  text-anchor: middle;
+}
+
 .presentation__reservation__txt {
   text-align: center;
+}
+
+.presentation__reservation__btn {
+  margin: 30px 60px;
+  background: linear-gradient(170deg, #ec73da, #9d60db);
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+  border-radius: 30px;
+  color: white;
+  font-size: 17px;
 }
 
 /* FONCTIONNEMENT*/
@@ -56,7 +126,7 @@ body {
   display: flex;
   width: 323px;
   height: 74px;
-  background-color: #f4f4f4;
+  background-color: #f6f6f6;
   border-radius: 20px;
   margin: 10px auto;
   -webkit-box-align: center;
@@ -65,24 +135,41 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: relative;
+  /*&__num{
+            padding:7px 10px;
+            text-align: center;      
+            background-color: $colpri;
+            border-radius: 50%;
+            margin-left: -10px;
+            color:white;
+            font-size: 13px;
+            font-weight: bold;
+
+
+        }*/
 }
 
-.fonctionnement__btn__num {
-  width: 24px;
-  height: 24px;
-  display: inline;
-  text-align: center;
-  vertical-align: middle;
+.fonctionnement__btn::before {
+  content: "1";
+  position: absolute;
+  width: 20px;
+  height: 20px;
   background-color: #9356DC;
+  left: -10px;
   border-radius: 50%;
-  margin-left: -10px;
+  text-align: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   color: white;
   font-size: 13px;
-  font-weight: bold;
 }
 
 .fonctionnement__btn__logo {
-  margin: 0 20px;
+  position: absolute;
+  bottom: 36%;
+  left: 35px;
 }
 
 .fonctionnement__btn__txt {
@@ -100,7 +187,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 1225px;
-  background-color: #f4f4f4;
+  background-color: #f6f6f6;
   width: 375px;
   margin: 0px auto;
 }
@@ -159,15 +246,43 @@ body {
   font-weight: 100;
 }
 
-.cards_rest__lapalettedugout__txts__coeur-vide {
+.cards_rest__lapalettedugout__txts__coeur {
   position: absolute;
+  font-size: 23px;
   size: 2x;
   bottom: 30px;
   right: 25px;
   z-index: 1;
-  -webkit-animation: transform;
-          animation: transform;
+  -webkit-animation: transform 250ms ease-out;
+          animation: transform 250ms ease-out;
   cursor: pointer;
+}
+
+.far.fa-heart {
+  display: inline-block;
+  font-size: 25px;
+  z-index: 1;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+.far.fa-heart:hover::before {
+  background: linear-gradient(45deg, #ea83df, #a05adc);
+  font-weight: bold;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+}
+
+.far.fa-heart:hover::after {
+  background: linear-gradient(45deg, #f5baef, #a05adc);
+  font-weight: bold;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
 }
 
 .footer {

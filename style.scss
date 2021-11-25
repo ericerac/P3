@@ -1,4 +1,6 @@
 @import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 /*$colpri:#9356DC;
 $colsec:#FF79DA;
@@ -10,11 +12,33 @@ $colgreyfosc:#e4e4e4;*/
 
 body{
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .header{
+    display: flex;
     width: 375px;
     height: 63px;
-    margin: 10px auto;;
+    margin: 0px auto;
+    font-size: 23px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+
+    &__fleche{
+        position: absolute;
+        left:10px;
+        bottom: 10px;   
+        visibility: hidden;     
+    }
+
+    &__logo__img{
+        margin-top: 20px;
+        height: 25px ;
+        
+    }
+}
+.fa-arrow-left{
+    height: 10px;
 }
 
 
@@ -28,12 +52,20 @@ body{
     margin: 10px auto;;
     
     &__localisation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 375px;
         height: 50px;
         background-color: $colgreyfosc;
-        border-top:inset 2px solid rgb(75, 74, 74);
+        border-style: inset;
+        border-top: 2px solid $colgreyfosc2;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
         
         &__logo{
+            margin: 10px;
 
         }
     }
@@ -41,12 +73,37 @@ body{
     &__reservation{
         position: relative;
     
-    
+        
+        &__titre{
+            display: flex;
+            width: 100%;
+            margin-top: 40px;
+            text-align:center;
+            text-align-last: center;
+            font-weight:bolder;
+            text-anchor: middle;
+         
+
+        }
+
         &__txt{
             text-align: center;
         }
 
-}
+        &__btn{
+          
+            margin: 30px 60px;
+            background: linear-gradient(170deg, #ec73da, #9d60db) ;
+            text-align:center;
+            vertical-align: middle;
+            padding: 20px;
+            border-radius: 30px;
+            color:white;
+            font-size: 17px;
+
+        }
+
+    }
 
 }
 /* FONCTIONNEMENT*/
@@ -66,14 +123,26 @@ body{
         margin:10px auto;
         align-items: center;
         justify-content: flex-start;
+        position: relative;
+
+        &::before{
+            content:"1";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: $colpri;
+            left:-10px;
+            border-radius: 50%;
+            text-align: center;
+            align-items:baseline;
+            color:white;
+            font-size: 13px;
+        }
         
 
-        &__num{
-            width: 24px;
-            height: 24px;
-            display:inline;
-            text-align: center;
-            vertical-align: middle;
+        /*&__num{
+            padding:7px 10px;
+            text-align: center;      
             background-color: $colpri;
             border-radius: 50%;
             margin-left: -10px;
@@ -82,10 +151,12 @@ body{
             font-weight: bold;
 
 
-        }
+        }*/
 
         &__logo{
-            margin:0 20px;
+            position: absolute;
+            bottom:36%;
+            left:35px;
         }
 
         &__txt{
@@ -152,25 +223,51 @@ body{
             font-size: 15px;
             font-weight:100;
         }
-        &__txts__coeur-vide{
+        &__txts__coeur{
             position: absolute;
+            font-size: 23px;
             size:2x;
             bottom:30px;
             right:25px;
             z-index: 1;
-            animation:transform;
+            animation:transform 250ms ease-out;
             cursor: pointer;
+            
 
-            &:hover :visited{
+            
 
-            }
-
-        }
-        &__txts__coeur-plein{
+            
 
         }
+        
 
     }
+}
+
+
+.far.fa-heart{
+    display: inline-block;
+    font-size: 25px;     
+    z-index: 1;
+    opacity: 1;    
+    transition: transform 300ms ease-out;
+    
+    &:hover::before {
+        background: linear-gradient(45deg, #ea83df, #a05adc);
+        font-weight: bold;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        z-index:-1 ;
+        
+    }
+    &:hover::after{
+        background: linear-gradient(45deg, #f5baef, #a05adc);
+        font-weight: bold;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        z-index: 1;
+    }
+
 }
 
 .footer{
@@ -181,8 +278,6 @@ body{
 
     &__logo{
         margin: 0px auto 0 20px;
-
-
     }
 
     &__logo__img{
@@ -204,3 +299,7 @@ body{
         }
     }
 }
+
+
+
+
