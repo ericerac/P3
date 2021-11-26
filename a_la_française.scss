@@ -78,35 +78,71 @@ body{
                  flex-direction: column;
                  position: relative;
                  padding-left: 10px;
-                 transition: padding-right 2s ease-in-out 750ms;
+                 
                  cursor: pointer;
+                 overflow: hidden;
                  
-
-                 &:hover{
-                 
-                 
-
-
                     
-                 }
+                 
+                &__description{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    margin-right: 20px;
+                }
 
                  &__titre{
                      margin: 12px auto 5px 0 ;
                  }
 
-                 &__prix{
-                     position:absolute;
-                     bottom:10px;
-                     right:20px;
-                 }
-
-                &__detail{
-                    margin:5px auto 10px 0;
-                
-
+                 
+                &:hover{
+                    transform:translateX(to left 50px);
+                    transform-origin: left;
                 }
+
+              
+                &__choisir{
+                    background: $colter;
+                    height: 70px;
+                    width: 74px;
+                    position: absolute;
+                    right: -70px;
+                    align-items: center;
+                    border-radius: 0 20px 20px 0;
+                    animation: translate 1s ease-in-out;
+                    
+                }
+
 
         }
     
+.fas.fa-check{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $colpri ;
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    color: wheat;
+    padding-left: 7px;
+    padding-top: 7px;
 
+}
        
+@keyframes slidein{
+    from {
+        margin-right: 40px;
+      }
+      75% {
+    
+        margin-left: 0;
+        width: 60%;
+      }
+    
+      to {
+        margin-left: 0%;
+        width: 60%;
+      }
+}

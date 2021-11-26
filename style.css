@@ -6,10 +6,28 @@ $colter:#99E2D0;
 $colgrey:#f4f4f4;
 $colfoot:#000000;
 $colgreyfosc:#e4e4e4;*/
-body {
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 3px solid #9356DC;
+  position: fixed;
+  top: 45%;
+  right: 45%;
+  border-radius: 50%;
+  border-left: transparent;
+  z-index: 9999;
+  -webkit-transform: rotate 360deg;
+          transform: rotate 360deg;
 }
 
 .header {
@@ -118,13 +136,27 @@ body {
   height: 400px;
   margin: 10px auto;
   border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fonctionnement__titre {
+  text-align: start;
 }
 
 .fonctionnement__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 323px;
+  width: 85%;
   height: 74px;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -136,6 +168,8 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: relative;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   /*&__num{
             padding:7px 10px;
             text-align: center;      
@@ -153,17 +187,15 @@ body {
 .fonctionnement__btn::before {
   content: "1";
   position: absolute;
-  width: 20px;
+  width: 24px;
   height: 20px;
   background-color: #9356DC;
   left: -10px;
   border-radius: 50%;
   text-align: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
   color: white;
   font-size: 13px;
+  padding-top: 5px;
 }
 
 .fonctionnement__btn__logo {
@@ -174,7 +206,7 @@ body {
 
 .fonctionnement__btn__txt {
   text-align: center;
-  margin: 0 auto;
+  margin: 25px auto;
 }
 
 /* RESTAURANTS*/
@@ -213,6 +245,22 @@ body {
   border-radius: 20px;
   -webkit-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.cards_rest__lapalettedugout__annonce {
+  width: 75px;
+  height: 28px;
+  margin: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #02d15f;
+  vertical-align: center;
+  background: #99E2D0;
+  text-align: center;
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
 .cards_rest__lapalettedugout__txts {
@@ -267,14 +315,6 @@ body {
   transition: -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out;
   transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
-}
-
-.far.fa-heart:hover::before {
-  background: linear-gradient(45deg, #ea83df, #a05adc);
-  font-weight: bold;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: -1;
 }
 
 .far.fa-heart:hover::after {
