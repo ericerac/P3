@@ -14,6 +14,16 @@ body{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.spinner{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 3px solid $colpri;
+    background: black;
+    border-radius: 50%;
+    border-left:transparent;
+    z-index: 11;
+}
 .header{
     display: flex;
     width: 375px;
@@ -232,12 +242,7 @@ body{
             z-index: 1;
             animation:transform 250ms ease-out;
             cursor: pointer;
-            
-
-            
-
-            
-
+        
         }
         
 
@@ -250,22 +255,14 @@ body{
     font-size: 25px;     
     z-index: 1;
     opacity: 1;    
-    transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out;  
     
-    &:hover::before {
-        background: linear-gradient(45deg, #ea83df, #a05adc);
-        font-weight: bold;
-        background-clip: text; 
-        -webkit-text-fill-color: transparent;
-        z-index:-1 ;
-        
-    }
     &:hover::after{
-        background: linear-gradient(45deg, #f5baef, #a05adc);
-        font-weight: bold;
-        background-clip: text; 
-        -webkit-text-fill-color: transparent;
-        z-index: 1;
+        
+        opacity:1;
+    }
+    &::after{
+        @include heart;
     }
 
 }

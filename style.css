@@ -283,6 +283,16 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 1;
+  opacity: 1;
+}
+
+.far.fa-heart::after {
+  background: linear-gradient(45deg, #f5baef, #a05adc);
+  font-weight: bold;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  opacity: 0;
 }
 
 .footer {
