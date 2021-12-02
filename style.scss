@@ -1,6 +1,7 @@
 @import "variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import "mixins.scss";
 
 /*$colpri:#9356DC;
 $colsec:#FF79DA;
@@ -8,32 +9,152 @@ $colter:#99E2D0;
 $colgrey:#f4f4f4;
 $colfoot:#000000;
 $colgreyfosc:#e4e4e4;*/
+
+
 *{box-sizing: border-box;}
+
 
 body{
     
     font-family: 'Roboto', sans-serif;
-
+    margin: 0 auto;
+    opacity:1;
+    animation: opac 3s ;
     
 }
-.spinner{
+a {
+    text-decoration: none;
+    color:black;
+    &:visited{
+        color:black;
+    }
+}
+ /*.spinner{
     width: 100px;
     height: 100px;
     margin: auto;
     border: 3px solid $colpri;
-   position:fixed;
-   top:45%;
-   right: 45%;
+    position:fixed;
+    top:45%;
+    right: 45%;
     border-radius: 50%;
     border-left:transparent;
     z-index: 9999;
+    animation: spin 3s ease-in-out forwards;
+}*/
+.spin1 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background:$colpri;
+    margin: 100remn auto;
+    position:fixed;
+    top: 35%;
+    right: 45%;
+    transition-duration: 3s;
+    animation: spin1 1s ease-in-out infinite;
+    transform-origin: bottom;
+    z-index: 100;
+    border-radius: .1rem .1rem 0 0 ;
     
-    transform: rotate (360deg);
-}
+  }
+.spin2 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    background:$colsec;
+    margin: auto;
+    position: fixed;
+    top: 35%;
+    right: 42%;
+    transition-duration: 3s;
+    animation: spin1 1s ease-in-out .3s infinite;
+    transform-origin: bottom;
+    z-index: 100;
+    border-radius: .1rem .1rem 0 0 ;
+  }
+.spin3 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    background:$colter;
+    margin: auto;
+    position: fixed;
+    top: 35%;
+    right: 48%;
+    transition-duration: 3s;
+    animation: spin1 1s ease-in-out .6s infinite;
+    transform-origin: bottom;
+    z-index: 100;
+    border-radius: .1rem .1rem 0 0 ;
+  }
+  @keyframes spin1{
+    0%{
+      transform:translateY(0) scale(0.1);
+    }
+    
+    50%{
+      transform:translateY(5rem) scale(1.6);
+    }
+    
+    100%{
+        transform:stranslateY(0) scale(0.1);
+    }
+  }
 
+
+
+
+
+@keyframes opac{
+    0% {
+        opacity: 0;
+    }
+    90%{
+       
+    }
+    99% {
+       
+    }
+    100% {
+       
+    }
+    
+}
+@keyframes spin{
+    0% {
+        transform:rotate(1turn);
+        
+        
+    }
+    20% {
+        transform:rotate(2turn);
+        
+    }
+    40% {
+        transform:rotate(3turn);
+      
+    }
+    60% {
+        transform:rotate(4turn);
+    }
+    80% {
+        transform:rotate(5turn);
+    }
+    99% {
+        transform:rotate(6turn);
+        
+    }
+    100% {
+        transform:rotate(0turn);
+        opacity: 0;
+    }
+    
+
+}
 .header{
     display: flex;
-    width: 375px;
+    width: 100%;
     height: 63px;
     margin: 0px auto;
     font-size: 23px;
@@ -53,15 +174,16 @@ body{
         height: 25px ;
         
     }
+    &__fa-arrow-left{
+        height: 10px;
+    }
 }
-.fa-arrow-left{
-    height: 10px;
-}
+
 
 
 /* PRESENTATION*/
 .presentation{
-    width: 375px;
+    width: 100%;
     height: 337px;
     background-color: $colgrey;
     display: block;
@@ -72,8 +194,8 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 375px;
-        height: 50px;
+        width: 100%;
+        height: 3rem;
         background-color: $colgreyfosc;
         border-style: inset;
         border-top: 2px solid $colgreyfosc2;
@@ -94,7 +216,8 @@ body{
         &__titre{
             display: flex;
             width: 100%;
-            margin-top: 40px;
+            margin-top: 3rem;
+            justify-content: center;
             text-align:center;
             text-align-last: center;
             font-weight:bolder;
@@ -109,7 +232,7 @@ body{
 
         &__btn{
           
-            margin: 30px 60px;
+            margin: 2.4rem 4rem;
             background: linear-gradient(170deg, #ec73da, #9d60db) ;
             text-align:center;
             vertical-align: middle;
@@ -117,6 +240,13 @@ body{
             border-radius: 30px;
             color:white;
             font-size: 17px;
+            box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
+            transition-duration: 150ms;
+            &:hover{
+                opacity: .9;
+                box-shadow: .1rem .3rem .3rem rgba(0, 0, 0,.7);
+
+            }
 
         }
 
@@ -126,7 +256,7 @@ body{
 /* FONCTIONNEMENT*/
 
 .fonctionnement{
-    width: 375px;
+    width: 100%;
     height: 400px;
     margin: 10px auto ;
     border:1px solid black;
@@ -165,6 +295,7 @@ body{
            
         }
         
+        
 
         /*&__num{
             padding:7px 10px;
@@ -192,47 +323,58 @@ body{
     }
 
 }
-
+.fonctionnement__btn:focus :nth-child(3){
+    background: #f5baef;
+            
+}
 
                        /* RESTAURANTS*/
 
 
-.cards_rest{
+.section_rest{
     display: flex;
     flex-direction: column;
-    height: 1225px;
+    height: 76rem;
     background-color: $colgrey;
-    width: 375px;
-    margin:0px auto;
+    width: 100%;
+    margin:0 auto;
     
     
     &__titre{
 
-        width: 325px;
-        margin: 10px auto;
+        width: 80%;
+        margin: 1rem 10%;
     }
+}
+.la_palette_du_gout{
+    @include annonce("Nouveau");
+}
+.la_note_enchantee{
+    @include annonce("Nouveau");
+}
 
-    &__lapalettedugout{
+.section_rest__cards{
         display:flex;
-        width: 325px;
+        width: 80%;
         height: 251px;
         position:relative;
         margin: 10px auto;
-        
+        box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
+        border-radius:1.2rem;
 
         &__img{
-            width: 325px;
-            height: 251px;
-            border-radius:20px;
-            box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
+            width: 100%;
+            height: 15rem;
+            border-radius:1.2rem;
+            
             position: relative;
             
-            
+        
         }     
-
-        &__annonce{
-            width: 75px;
+       /* &__annonce{
+            padding: 0 .5rem;
             height: 28px;
+            line-height: 28px;
             margin: 0;
             border-radius: 3px;
             font-size: 12px;
@@ -241,10 +383,12 @@ body{
             background: $colter;
             text-align: center;
             position: absolute;
-            top:30px;
-            right:30px;
+            top:20px;
+            right:20px;
             
-        }  
+        }  */
+
+        
         
         &__txts{
             display:block;
@@ -283,7 +427,7 @@ body{
         
 
     }
-}
+
 
 
 .far.fa-heart{
@@ -291,57 +435,29 @@ body{
     font-size: 25px;     
     z-index: 1;
     opacity: 1;    
-    transition: transform 300ms ease-out;  
+   
     
-    &:hover::after{
+    &:hover::before{
+        transition:  .5s;
         background: linear-gradient(45deg, #f5baef, #a05adc);
         font-weight: bold;
         background-clip: text; 
         -webkit-text-fill-color: transparent;
         z-index: 1;
         opacity:1;
+       
     }
-    &::after{
-        background: linear-gradient(45deg, #f5baef, #a05adc);
-        font-weight: bold;
-        background-clip: text; 
-        -webkit-text-fill-color: transparent;
-        z-index: 1;
-        opacity:0;
-    }
+    
 
 }
 
 .footer{
-    width: 375px;
-    height: 200px;
-    background-color: rgb(167, 164, 164);
-    margin:0 auto;
+    @include footer;
 
-    &__logo{
-        margin: 0px auto 0 20px;
-    }
-
-    &__logo__img{
-        transform: scale(.5);
-        margin: 0;
-        transform-origin: left;
-        padding-top: 20px;
-    }
-
-    &__liens{
-        display: flex;
-        margin: 0px auto 0px 20px;
-        padding:5px;
-        align-items: baseline;
-        color:white;
-
-        &__txt{
-            margin: 5px ;
-        }
-    }
 }
-
+.footer .fas{
+    width: 1.3rem;
+}
 
 
 
