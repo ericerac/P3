@@ -5,7 +5,9 @@ $colsec:#FF79DA;
 $colter:#99E2D0;
 $colgrey:#f4f4f4;
 $colfoot:#000000;
-$colgreyfosc:#e4e4e4;*/
+$colgreyfosc:#e4e4e4;
+$col-titre-detail-section-menu:rgba(0,0,0,.5)*/
+
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -42,42 +44,57 @@ body{
     padding: 0;
     box-sizing: border-box ;
     font-family: "roboto", sans-serif;
+    min-width: 20rem;
 }
-header{
-    @include header;
+
+.header{
+    @include header(visible);
+    min-width: 20rem;
 }
 .main{
     width: 100%;
     height: auto;
+    min-width: 20rem;
     
-    
+    &__photo{
+        width: 100%;
+        height: 20rem;
+        max-height: 25rem;
+    }
     &__img{
         display:flex;
         width: 100%;
-        height:auto;
-        max-height: 20rem;
+        height:20rem;
+        max-height: 25rem;
         object-fit:cover;
     }
 }
 
 .main__section{
+    display:flex;
+    flex-direction: column;
         width: 100%;
-        height: 90rem;
+        height: auto;
         margin: -4rem auto 0 auto;
         z-index: 1;
         border-radius: 2rem 2rem 0 0 ;
         background-color:$colgrey ;
         position: relative;
+        align-content: center;
+        
 
-        &__restaurant{
+        &__NomRestaurant{
             display: flex;
-            align-items: center;
+            
+            align-items: baseline;
             justify-content: space-between;
-            margin: 2.1rem 1.8rem;
+            margin: 1rem 1.8rem 0 1.8rem;
 
             &__titre{
                 font-family: "Shrikhand";
-                font-size: 1.8rem;
+                font-size: 2rem;
+                margin-bottom: 1.2rem;
+                
             }
         }
 
@@ -87,14 +104,16 @@ header{
         @include heart;
     }
 
-.entrees{
-    display: flex;
-    flex-direction: column;    
-}
+    
 .container{
-    margin-bottom: 3rem;
+    margin-bottom: .6rem;
+    margin-top: .6rem;
     justify-content: left;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;  
 }
+
 
 .item1{
     @include anim-item;
@@ -129,13 +148,17 @@ header{
 }
 .item{
     background-color : white;
-    box-shadow: .2rem .2rem .4rem rgba($color: #000000, $alpha: .1);
+    box-shadow: .2rem .2rem .9rem rgba($color: #000000, $alpha: .1);
     
 }
 .section__titre{
+    width: 90%;
     font-family: "roboto";
     text-transform: uppercase;
-    margin-left: 1.5rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    color:rgba($color: #000000, $alpha: .5);
+    font-weight: 100;
    
 
     &::after{
@@ -151,7 +174,7 @@ header{
                  
                  position:relative;               
                  width: 90%;   
-                 margin: .8rem auto;
+                 margin: .45rem auto;
                  border-radius: 1.2rem;
                  display:flex;
                  padding-left: .7rem;
@@ -169,18 +192,16 @@ header{
                      overflow: hidden;
                      position: relative;
                      flex:1;
-                    transition-duration: 1s ;
+                    transition-duration: .7s ;
                 }
                      
                 &:hover &__plat{
                     margin-right:4.3rem;
                 }
-                
-    
-                     
                    
                     &__titre{
-                        margin:.5rem 0 ;
+                        margin:.7rem 0 .5 0 ;
+                        font-size: 1.1rem;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         overflow: hidden;
@@ -189,24 +210,33 @@ header{
                     
                        
                     &__detail{
+                        font-size: 1rem;
                         margin-top: .3rem;
-                        margin-bottom: .7rem;
+                        margin-bottom: .75rem;
                         margin-right: 0;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         overflow: hidden;
-                        font-weight:lighter;
+                        color:rgba(0, 0, 0,.5);
                     }
                      
                     
                  
                  &__prix{
+                     display:flex;
+                     font-size: .9rem;
+                     font-weight: bold;
                     position:absolute;
                     right: 1.5rem;
-                    bottom: .8rem;
+                    bottom: .7rem;
+                    height: auto;
+                    transition-duration: .7s;
                  }
                 
-                
+                &:hover &__prix{
+                    transform: translateX()
+
+                }
                 
                 
                 &__choisir{
@@ -217,14 +247,14 @@ header{
                     border-radius: 0 1.2rem 1.2rem 0;
                     background-color: $colter;
                     margin:-0rem -4.3rem -0rem 0rem;
-                    transition-duration: 1s;
+                    transition-duration: .7s;
                    
                 }
                 &:hover &__choisir{
                     transform: translateX(-4.3rem);
                 }
                 &__icon{
-                    transition-duration: 1s;
+                    transition-duration: .7s;
 
                 }
                    
@@ -252,14 +282,17 @@ header{
         }
 
 .btn-commander{
-    display:inline-flex;
+    display:inline-block;
     font-size: 1rem;
-    padding: 1rem 3rem;
+    padding: 1rem 3.4rem;
     background: linear-gradient(170deg, $colsec, $colpri);
-    border-radius: 1.5rem;
+    border-radius: 1.7rem;
     color:white;
-    margin: 5rem auto;
-   
+    margin: 2.5rem auto 5rem auto;
+    box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
+    transition-duration: .3s;
+    cursor: pointer;
+    @include btn;
 }
         .footer{
             @include footer;

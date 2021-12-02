@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "acceuil_tablet.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "acceuil_tablet.css"
+}

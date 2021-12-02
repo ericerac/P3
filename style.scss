@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "mixins.scss";
 
+    
+
 /*$colpri:#9356DC;
 $colsec:#FF79DA;
 $colter:#99E2D0;
@@ -20,6 +22,7 @@ body{
     margin: 0 auto;
     opacity:1;
     animation: opac 3s ;
+    min-width: 20rem;
     
 }
 a {
@@ -29,46 +32,39 @@ a {
         color:black;
     }
 }
- /*.spinner{
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 3px solid $colpri;
-    position:fixed;
-    top:45%;
-    right: 45%;
-    border-radius: 50%;
-    border-left:transparent;
-    z-index: 9999;
-    animation: spin 3s ease-in-out forwards;
-}*/
+ 
 .spin1 {
+    display: flex;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background:$colpri;
-    margin: 100remn auto;
+    background:$colpri;  
+
     position:fixed;
     top: 35%;
     right: 45%;
-    transition-duration: 3s;
-    animation: spin1 1s ease-in-out infinite;
+    
+    animation-iteration-count: 3;
+    animation: spin1 1s ease-in-out .1s forwards;
     transform-origin: bottom;
     z-index: 100;
     border-radius: .1rem .1rem 0 0 ;
     
+    
   }
 .spin2 {
+    display: flex;
     width: 1rem;
     height: 1rem;
     border-radius: .5rem;
     background:$colsec;
-    margin: auto;
+   
     position: fixed;
     top: 35%;
-    right: 42%;
-    transition-duration: 3s;
-    animation: spin1 1s ease-in-out .3s infinite;
+    right: 51%;
+    
+    animation: spin1 1s ease-in-out .4s forwards;
+    animation-iteration-count: 3;
     transform-origin: bottom;
     z-index: 100;
     border-radius: .1rem .1rem 0 0 ;
@@ -78,34 +74,31 @@ a {
     height: 1rem;
     border-radius: .5rem;
     background:$colter;
-    margin: auto;
+    
     position: fixed;
     top: 35%;
     right: 48%;
-    transition-duration: 3s;
-    animation: spin1 1s ease-in-out .6s infinite;
+
+    animation-iteration-count: 3;
+    animation: spin1 1s ease-in-out .7s forwards;
     transform-origin: bottom;
     z-index: 100;
     border-radius: .1rem .1rem 0 0 ;
   }
-  @keyframes spin1{
+
+@keyframes spin1{
     0%{
-      transform:translateY(0) scale(0.1);
+      transform:translateY(0) scale(0) ;
     }
     
     50%{
-      transform:translateY(5rem) scale(1.6);
+      transform:translateY(5rem) scale(1.6) ;
     }
     
     100%{
-        transform:stranslateY(0) scale(0.1);
+        transform:stranslateY(0) scale(0) ;
     }
   }
-
-
-
-
-
 @keyframes opac{
     0% {
         opacity: 0;
@@ -153,30 +146,7 @@ a {
 
 }
 .header{
-    display: flex;
-    width: 100%;
-    height: 63px;
-    margin: 0px auto;
-    font-size: 23px;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-
-    &__fleche{
-        position: absolute;
-        left:10px;
-        bottom: 10px;   
-        visibility: hidden;     
-    }
-
-    &__logo__img{
-        margin-top: 20px;
-        height: 25px ;
-        
-    }
-    &__fa-arrow-left{
-        height: 10px;
-    }
+    @include header(hidden);
 }
 
 
@@ -231,8 +201,8 @@ a {
         }
 
         &__btn{
-          
-            margin: 2.4rem 4rem;
+            max-width: 18rem;
+            margin: 2.4rem auto;
             background: linear-gradient(170deg, #ec73da, #9d60db) ;
             text-align:center;
             vertical-align: middle;
@@ -242,11 +212,7 @@ a {
             font-size: 17px;
             box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
             transition-duration: 150ms;
-            &:hover{
-                opacity: .9;
-                box-shadow: .1rem .3rem .3rem rgba(0, 0, 0,.7);
-
-            }
+            @include btn;
 
         }
 
@@ -257,9 +223,9 @@ a {
 
 .fonctionnement{
     width: 100%;
-    height: 400px;
-    margin: 10px auto ;
-    border:1px solid black;
+    height: auto;
+    margin: 1rem auto 0 auto;
+    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -269,15 +235,15 @@ a {
     }
     &__btn{
         display: flex;
-        width: 85%;
-        height: 74px;
+        width: 90%;
+        height: 4.6rem;
         background-color:$colgrey ;
         border-radius: 20px;
         margin:10px auto;
         align-items: center;
         justify-content: flex-start;
         position: relative;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0,.2);
+        box-shadow: .3rem .3rem 1rem .1rem rgba(0, 0, 0,.15);
 
         &::before{
             content:"1";
@@ -341,9 +307,9 @@ a {
     
     
     &__titre{
-
-        width: 80%;
-        margin: 1rem 10%;
+        width: 90%;
+        margin:1rem 5%;
+       /* margin: 1rem auto;text-align: center;  MEDIA QUERIES*/ 
     }
 }
 .la_palette_du_gout{
@@ -355,8 +321,8 @@ a {
 
 .section_rest__cards{
         display:flex;
-        width: 80%;
-        height: 251px;
+        width: 90%;
+        height: 15rem;
         position:relative;
         margin: 10px auto;
         box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
