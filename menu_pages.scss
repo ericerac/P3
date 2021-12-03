@@ -1,0 +1,309 @@
+
+@import "variables";
+/*$colpri:#9356DC;
+$colsec:#FF79DA;
+$colter:#99E2D0;
+$colgrey:#f4f4f4;
+$colfoot:#000000;
+$colgreyfosc:#e4e4e4;
+$col-titre-detail-section-menu:rgba(0,0,0,.5)*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import "mixins";
+
+@keyframes mgr{
+     100%{
+        margin-right:6rem;
+        background: rgb(151, 150, 150);
+    }
+}
+@keyframes choix{
+     0%{
+        transform:translateX(0)
+        
+    }
+    100%{
+        transform:translateX(-4.3rem)
+    }
+}
+@keyframes opac{
+     0%{
+         scale:(0);
+     }
+    100%{
+        scale:(1);
+    }
+}
+
+
+
+body{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: "roboto", sans-serif;
+    min-width: 20rem;
+}
+
+.header{
+    @include header(visible);
+    min-width: 20rem;
+}
+.main{
+    width: 100%;
+    height: auto;
+    min-width: 20rem;
+    
+    &__photo{
+        width: 100%;
+        height: 20rem;
+        max-height: 25rem;
+    }
+    &__img{
+        display:flex;
+        width: 100%;
+        height:20rem;
+        max-height: 25rem;
+        object-fit:cover;
+    }
+}
+
+.main__section{
+    display:flex;
+    flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: -4rem auto 0 auto;
+        z-index: 1;
+        border-radius: 2rem 2rem 0 0 ;
+        background-color:$colgrey ;
+        position: relative;
+        align-content: center;
+        
+
+        &__NomRestaurant{
+            display: flex;
+            
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 1rem 1.8rem 0 1.8rem;
+
+            &__titre{
+                font-family: "Shrikhand";
+                font-size: 2rem;
+                margin-bottom: 1.2rem;
+                
+            }
+        }
+
+    
+    }
+.far.fa-heart{
+        @include heart;
+    }
+
+    
+.container{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5fr;
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;  
+    
+}
+.entrees__items__list {
+   list-style-type: none;
+   margin:0;
+   padding: 0;
+}
+
+
+.item-1{
+    @include anim-item;
+}
+.item-2{
+    @include anim-item($delay:.3s);
+}
+.item-3{
+    @include anim-item($delay:.45s);
+}
+.item-4{
+    @include anim-item($delay:.6s);
+}
+.item-5{
+    @include anim-item($delay:.75s);
+}
+.item-6{
+    @include anim-item($delay:.9s);
+}
+.item-7{
+    @include anim-item($delay:1.05s);
+}
+.item-8{
+    @include anim-item($delay:1.2s);
+}
+.item-9{
+    @include anim-item($delay:1.35s);
+}
+
+
+@for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i}+.1s}}
+
+
+.item{
+    background-color : white;
+    box-shadow: .2rem .2rem .9rem rgba($color: #000000, $alpha: .1);
+    
+}
+.section__titre{
+    width: 90%;
+    font-family: "roboto";
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    color:rgba($color: #000000, $alpha: .5);
+    font-weight: 100;
+   
+
+    &::after{
+        content:"";
+        display:block;
+        width: 3rem;
+        height: 0.25rem;
+        background:$colter;
+        margin-top: .3rem;
+    }
+}
+.entrees__items, .plats__items, .desserts__items{
+                 
+                 position:relative;               
+                 width: 90%;   
+                 margin: .45rem auto;
+                 border-radius: 1.2rem;
+                 display:flex;
+                 padding-left: .7rem;
+                 cursor: pointer;
+                 overflow: hidden;
+                 
+                 
+                    
+                &__plat{
+                     height: auto;
+                     width: 100%;
+                     overflow: hidden; 
+                     text-overflow: ellipsis;
+                     white-space: nowrap;
+                     overflow: hidden;
+                     position: relative;
+                     flex:1;
+                    transition-duration: .7s ;
+                }
+                     
+                &:hover &__plat{
+                    margin-right:4.3rem;
+                }
+                   
+                    &__titre{
+                        margin:.7rem 0 .5 0 ;
+                        font-size: 1.1rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        padding-top:.2rem;
+                    }
+                    
+                       
+                    &__detail{
+                        font-size: 1rem;
+                        margin-top: .3rem;
+                        margin-bottom: .75rem;
+                        margin-right: 0;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color:rgba(0, 0, 0,.5);
+                    }
+                     
+                    
+                 
+                 &__prix{
+                     display:flex;
+                     font-size: .9rem;
+                     font-weight: bold;
+                    position:absolute;
+                    right: 1.5rem;
+                    bottom: .7rem;
+                    height: auto;
+                    transition-duration: .7s;
+                 }
+                
+                &:hover &__prix{
+                    transform: translateX()
+
+                }
+                
+                
+                &__choisir{
+                    display:flex;
+                    width: 4.2rem;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0 1.2rem 1.2rem 0;
+                    background-color: $colter;
+                    margin:-0rem -4.3rem -0rem 0rem;
+                    transition-duration: .7s;
+                   
+                }
+                &:hover &__choisir{
+                    transform: translateX(-4.3rem);
+                }
+                &__icon{
+                    transition-duration: .7s;
+
+                }
+                   
+                &:hover &__icon {
+                    transform:rotate(-1turn);
+                }   
+            
+                
+                 
+}
+
+
+.fas.fa-check {
+            color:$colter;
+            font-weight: bolder;
+            width: 1.3rem;
+            height: 1.3rem;
+            background-color: white;
+            border-radius: 50%;
+            align-items: center;
+            line-height: 1.3rem;
+            transition-duration: 1s;
+            padding-left: .2rem;
+            padding-top: .1rem;
+        }
+
+.btn-commander{
+    display:inline-block;
+    font-size: 1rem;
+    padding: 1rem 3.4rem;
+    background: linear-gradient(170deg, $colsec, $colpri);
+    border-radius: 1.7rem;
+    color:white;
+    margin: 2.5rem auto 5rem auto;
+    box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
+    transition-duration: .3s;
+    cursor: pointer;
+    @include btn;
+}
+        .footer{
+            @include footer;
+        }
