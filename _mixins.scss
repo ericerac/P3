@@ -84,6 +84,19 @@
     
 }
 
+@mixin spin-load($colbg:$colpri, $delay:.1s, $right:50%){
+    width: .5rem;
+    height: .5rem;
+    border-radius:2.5rem;
+    background-color: $colbg;
+    overflow: hidden;
+   position: absolute;
+   top: 20rem;
+   right: $right;
+   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  $delay 5;
+    transform-origin: bottom;
+    opacity:0;
+}
 
 
 
@@ -107,8 +120,8 @@
        
     }
 }
-@mixin anim-item ($delay:.15s){
-    animation: opac $delay cubic-bezier(0.5, 1.58, 0.34, 0.82) forwards;
+@mixin anim-item ($delay:.1s){
+    animation: opac $delay $CourbeBezier forwards;
 }
 @mixin heart {
     display: inline-block;

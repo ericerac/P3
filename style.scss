@@ -20,10 +20,8 @@ $colgreyfosc:#e4e4e4;*/
 body{
     
     font-family: 'Roboto', sans-serif;
-    margin: 0 auto;
-   
-    min-width: 20rem;
-    
+    margin: 0 auto;  
+    min-width: 20rem;  
 }
 a {
     text-decoration: none;
@@ -35,49 +33,15 @@ a {
  
 .spinner__spin1{
   
-    width: .5rem;
-    height: .5rem;
-    border-radius:2.5rem;
-    background-color: $colpri;
-    overflow: hidden;
-   position: absolute;
-   top: 10rem;
-   right: 50%;
-   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .1s 5;
-    transform-origin: bottom;
-    opacity:0;
- 
-    
-    
+    @include spin-load($colpri,.1s);
+  
   }
 
 .spinner__spin2 {
-    width: .5rem;
-    height: .5rem;
-    border-radius:2.5rem;
-    background-color: $colsec;
-    overflow: hidden;
-   position: absolute;
-   top: 10rem;
-   right: 53%;
-   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .2s 5 backwards;
-    transform-origin: bottom;
-    z-index: 100;
-    opacity:0;
+    @include spin-load($colsec,.2s,53% );
   }
 .spinner__spin3 {
-    width: .5rem;
-    height: .5rem;
-    border-radius:2.5rem;
-    background-color: $colter;
-    overflow: hidden;
-   position: absolute;
-   top: 10rem;
-   right: 47%;
-   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .3s 5;
-    transform-origin: bottom;
-    opacity:0;
-    
+    @include spin-load($colter,.3s,47% );
   }
 
 @keyframes spin1{
@@ -101,16 +65,16 @@ a {
 
 @keyframes opac{
     0% {
-        opacity: 0;
+        opacity: 0.3;
     }
     90%{
-       
+        opacity: 0.3;
     }
     99% {
-       
+        opacity: 0.3;
     }
     100% {
-       
+       opacity:1
     }
     
 }
@@ -147,6 +111,9 @@ a {
 }
 .header{
     @include header(hidden);
+}
+.header, section , footer{
+    animation: opac 4s linear ;
 }
 
 
@@ -403,7 +370,8 @@ a {
     display: inline-block;
     font-size: 25px;     
     z-index: 1;
-    opacity: 1;    
+    opacity: 1;
+    transition-duration: 300ms;    
    
     
     &:hover::before{
