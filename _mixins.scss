@@ -16,18 +16,16 @@
     background-color: $colfoot;
     margin:0 auto;
     align-items: left;
+    
 
     &__logo{
         width: 80%;
-        margin: 0 auto 0 3rem;
-        color: white;
-    
-        &__img{
-            transform: scale(.5);
-            margin: 0;
-            transform-origin: left;
-            padding-top: 1.3rem;
-        }
+        margin: 2rem auto .5rem 3rem;
+        color:rgb(255, 255, 255);
+        font-family: "Shrikhand";
+        font-size: 1.1rem;
+
+        
     }
 
     &__list{
@@ -133,7 +131,7 @@
 @mixin btn{
     &:hover{
         opacity: .9;
-        box-shadow: .1rem .1rem .6rem rgba(0, 0, 0,.5);
+        box-shadow: .1rem .1rem .5rem rgba(0, 0, 0,.7);
 
     }
 }

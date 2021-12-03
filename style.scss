@@ -20,8 +20,7 @@ body{
     
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
-    opacity:1;
-    animation: opac 3s ;
+   
     min-width: 20rem;
     
 }
@@ -33,70 +32,69 @@ a {
     }
 }
  
-.spin1 {
-    display: flex;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background:$colpri;  
-
-    position:fixed;
-    top: 35%;
-    right: 45%;
-    
-    animation-iteration-count: 3;
-    animation: spin1 1s ease-in-out .1s forwards;
+.spinner__spin1{
+  
+    width: .5rem;
+    height: .5rem;
+    border-radius:2.5rem;
+    background-color: $colpri;
+    overflow: hidden;
+   position: absolute;
+   top: 10rem;
+   right: 50%;
+   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .1s 5;
     transform-origin: bottom;
-    z-index: 100;
-    border-radius: .1rem .1rem 0 0 ;
+    opacity:0;
+ 
     
     
   }
-.spin2 {
-    display: flex;
-    width: 1rem;
-    height: 1rem;
-    border-radius: .5rem;
-    background:$colsec;
-   
-    position: fixed;
-    top: 35%;
-    right: 51%;
-    
-    animation: spin1 1s ease-in-out .4s forwards;
-    animation-iteration-count: 3;
-    transform-origin: bottom;
-    z-index: 100;
-    border-radius: .1rem .1rem 0 0 ;
-  }
-.spin3 {
-    width: 1rem;
-    height: 1rem;
-    border-radius: .5rem;
-    background:$colter;
-    
-    position: fixed;
-    top: 35%;
-    right: 48%;
 
-    animation-iteration-count: 3;
-    animation: spin1 1s ease-in-out .7s forwards;
+.spinner__spin2 {
+    width: .5rem;
+    height: .5rem;
+    border-radius:2.5rem;
+    background-color: $colsec;
+    overflow: hidden;
+   position: absolute;
+   top: 10rem;
+   right: 53%;
+   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .2s 5 backwards;
     transform-origin: bottom;
     z-index: 100;
-    border-radius: .1rem .1rem 0 0 ;
+    opacity:0;
+  }
+.spinner__spin3 {
+    width: .5rem;
+    height: .5rem;
+    border-radius:2.5rem;
+    background-color: $colter;
+    overflow: hidden;
+   position: absolute;
+   top: 10rem;
+   right: 47%;
+   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  .3s 5;
+    transform-origin: bottom;
+    opacity:0;
+    
   }
 
 @keyframes spin1{
     0%{
       transform:translateY(0) scale(0) ;
+      opacity: 1;
+      
     }
     
     50%{
-      transform:translateY(5rem) scale(1.6) ;
+      transform:translateY(-3rem) scale(1.6) ;
+      opacity: 1;
     }
     
     100%{
         transform:stranslateY(0) scale(0) ;
+        opacity: 1;
+        
     }
   }
 @keyframes opac{

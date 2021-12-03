@@ -112,6 +112,12 @@ body{
     display: flex;
     flex-direction: column;  
     justify-content: space-around;  
+    
+}
+.entrees__items__list {
+   list-style-type: none;
+   margin:0;
+   padding: 0;
 }
 
 

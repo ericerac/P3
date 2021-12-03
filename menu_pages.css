@@ -197,6 +197,12 @@ body {
       justify-content: space-around;
 }
 
+.entrees__items__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .item1 {
   -webkit-animation: opac 0.15s cubic-bezier(0.5, 1.58, 0.34, 0.82) forwards;
           animation: opac 0.15s cubic-bezier(0.5, 1.58, 0.34, 0.82) forwards;
@@ -405,8 +411,8 @@ body {
 
 .btn-commander:hover {
   opacity: .9;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.7);
 }
 
 .footer {
@@ -428,17 +434,10 @@ body {
 
 .footer__logo {
   width: 80%;
-  margin: 0 auto 0 3rem;
+  margin: 2rem auto .5rem 3rem;
   color: white;
-}
-
-.footer__logo__img {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  margin: 0;
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  padding-top: 1.3rem;
+  font-family: "Shrikhand";
+  font-size: 1.1rem;
 }
 
 .footer__list {

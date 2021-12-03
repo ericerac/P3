@@ -14,9 +14,6 @@ $colgreyfosc:#e4e4e4;*/
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
-  opacity: 1;
-  -webkit-animation: opac 3s;
-          animation: opac 3s;
   min-width: 20rem;
 }
 
@@ -29,78 +26,70 @@ a:visited {
   color: black;
 }
 
-.spin1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background: #9356DC;
-  position: fixed;
-  top: 35%;
-  right: 45%;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-  -webkit-animation: spin1 1s ease-in-out .1s forwards;
-          animation: spin1 1s ease-in-out .1s forwards;
+.spinner__spin1 {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 2.5rem;
+  background-color: #9356DC;
+  overflow: hidden;
+  position: absolute;
+  top: 10rem;
+  right: 50%;
+  -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 5;
+          animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 5;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  z-index: 100;
-  border-radius: .1rem .1rem 0 0;
+  opacity: 0;
 }
 
-.spin2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1rem;
-  height: 1rem;
-  border-radius: .5rem;
-  background: #FF79DA;
-  position: fixed;
-  top: 35%;
-  right: 51%;
-  -webkit-animation: spin1 1s ease-in-out .4s forwards;
-          animation: spin1 1s ease-in-out .4s forwards;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+.spinner__spin2 {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 2.5rem;
+  background-color: #FF79DA;
+  overflow: hidden;
+  position: absolute;
+  top: 10rem;
+  right: 53%;
+  -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 5 backwards;
+          animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 5 backwards;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   z-index: 100;
-  border-radius: .1rem .1rem 0 0;
+  opacity: 0;
 }
 
-.spin3 {
-  width: 1rem;
-  height: 1rem;
-  border-radius: .5rem;
-  background: #99E2D0;
-  position: fixed;
-  top: 35%;
-  right: 48%;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-  -webkit-animation: spin1 1s ease-in-out .7s forwards;
-          animation: spin1 1s ease-in-out .7s forwards;
+.spinner__spin3 {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 2.5rem;
+  background-color: #99E2D0;
+  overflow: hidden;
+  position: absolute;
+  top: 10rem;
+  right: 47%;
+  -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 5;
+          animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 5;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  z-index: 100;
-  border-radius: .1rem .1rem 0 0;
+  opacity: 0;
 }
 
 @-webkit-keyframes spin1 {
   0% {
     -webkit-transform: translateY(0) scale(0);
             transform: translateY(0) scale(0);
+    opacity: 1;
   }
   50% {
-    -webkit-transform: translateY(5rem) scale(1.6);
-            transform: translateY(5rem) scale(1.6);
+    -webkit-transform: translateY(-3rem) scale(1.6);
+            transform: translateY(-3rem) scale(1.6);
+    opacity: 1;
   }
   100% {
     -webkit-transform: stranslateY(0) scale(0);
             transform: stranslateY(0) scale(0);
+    opacity: 1;
   }
 }
 
@@ -108,14 +97,17 @@ a:visited {
   0% {
     -webkit-transform: translateY(0) scale(0);
             transform: translateY(0) scale(0);
+    opacity: 1;
   }
   50% {
-    -webkit-transform: translateY(5rem) scale(1.6);
-            transform: translateY(5rem) scale(1.6);
+    -webkit-transform: translateY(-3rem) scale(1.6);
+            transform: translateY(-3rem) scale(1.6);
+    opacity: 1;
   }
   100% {
     -webkit-transform: stranslateY(0) scale(0);
             transform: stranslateY(0) scale(0);
+    opacity: 1;
   }
 }
 
@@ -315,8 +307,8 @@ a:visited {
 
 .presentation__reservation__btn:hover {
   opacity: .9;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.7);
 }
 
 /* FONCTIONNEMENT*/
@@ -575,17 +567,10 @@ a:visited {
 
 .footer__logo {
   width: 80%;
-  margin: 0 auto 0 3rem;
+  margin: 2rem auto .5rem 3rem;
   color: white;
-}
-
-.footer__logo__img {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  margin: 0;
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  padding-top: 1.3rem;
+  font-family: "Shrikhand";
+  font-size: 1.1rem;
 }
 
 .footer__list {
