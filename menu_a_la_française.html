@@ -3,8 +3,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index" />
         <title>ohmyfood, Restaurant À la française</title>
         <link rel="stylesheet" href="menu_pages.css">
+        <link rel="stylesheet" href="menu_pages_tablette.css">
         <script src="https://kit.fontawesome.com/379c065726.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -15,13 +17,17 @@
 
         <main class="main">
             <div class="main__photo">
-                <img class="main__img" src="images/restaurants/a_la_française.jpg" alt="Restaurant À la française">
+                <img class="main__img" srcset="images/restaurants/a_la_française_small.jpg 800w,
+                images/restaurants/a_la_française_medium.jpg 1222px, images/restaurants/a_la_française.jpg 1700px"
+                sizes="(max-width:768px) 800px, 1222px"
+                src="images/restaurants/a_la_française.jpg" alt="Restaurant À la française, Cité Rouge">
             </div>
-            <section class="main__section">
+            <section class="main__section ">
                 <div class="main__section__NomRestaurant">
                     <h1 class="main__section__NomRestaurant__titre"> À la française</h1>
                     <i class="far fa-heart"></i>
                 </div>
+                <section class="main__section__cards">
                 <section class="entrees container">
                     <h3 class="section__titre">entrées</h3>
                     
@@ -67,10 +73,12 @@
                             <div class="plats__items__plat">
                                     <h4 class="plats__items__titre">Coquilles Saint-Jacques</h4>       
                                     <p class="plats__items__detail">Accompagnées d'une purée de panais</p>
-                                    <div class="plats__items__prix">40€</div>
-                            </div>       
+                            </div>
+                            <div class="plats__items__prix">40€</div>
+                                   
                             
-                            <div class="plats__items__choisir">             
+                            <div class="plats__items__choisir">  
+                                          
                                 <div class="plats__items__icon">
                                 <i class="fas fa-check"></i></div>
                             </div>   
@@ -85,7 +93,7 @@
                                 <div class="plats__items__icon">
                                 <i class="fas fa-check"></i></div>
                             </div>   
-                        </section>-
+                        </section>
                         <section class="plats__items item-6 item">
                             <div class="plats__items__plat">
                                     <h3 class="plats__items__titre">Pigeonneau d’Ille-et-Vilaine</h3>       
@@ -113,7 +121,7 @@
                                 <div class="desserts__items__icon">
                                 <i class="fas fa-check"></i></div>
                             </div>   
-                        </section>-
+                        </section>
                         <section class="desserts__items item-8 item">
                             <div class="desserts__items__plat">
                                     <h3 class="desserts__items__titre">Fondant au chocolat</h3>       
@@ -124,7 +132,7 @@
                                 <div class="desserts__items__icon">
                                 <i class="fas fa-check"></i></div>
                             </div>   
-                        </section>-
+                        </section>
                         <section class="desserts__items item-9 item">
                             <div class="desserts__items__plat">
                                     <h3 class="desserts__items__titre">Millefeuille croustillant</h3>       
@@ -137,12 +145,9 @@
                             </div>   
                         </section>
                         
-
-
-
-                        
-                    
+                 </section>
                 </section>
+
                 <div class="btn-commander">Commander</div>
 
             </section>
@@ -167,7 +172,7 @@
                     </a>
                 </li>
                 <li class="footer__list__liens"><a class="footer__list__liens">Mentions légales</a></li>
-                <li class="footer__list__liens"><a class="footer__list__liens">Contact</a></li>
+                <li class="footer__list__liens"><a href="mailto:eric2022contact@gmail.com" class="footer__list__liens">Contact</a></li>
             </ul>
         </footer>
 

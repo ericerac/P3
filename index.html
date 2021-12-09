@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> ohmyfood Acceuil</title>
+        <meta description>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="acceuil_tablet.css">
         <script src="https://kit.fontawesome.com/379c065726.js" crossorigin="anonymous"></script>
@@ -38,50 +39,56 @@
 
         <section class="fonctionnement">
             <h2 class="fonctionnement__titre">Fonctionnement</h2>
-            <div class="fonctionnement__btn">
-               <!-- <span class="fonctionnement__btn__num"></span>-->
-                <div class="fonctionnement__btn__logo">
-                    <i class="fas fa-mobile-alt"></i>
+            <div class="fonctionnement__groupe__btn">
+                <div class="fonctionnement__btn">
+                   <!-- <span class="fonctionnement__btn__num"></span>-->
+                    <div class="fonctionnement__btn__logo">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <p class="fonctionnement__btn__txt">Choisissez un restaurants</p>
                 </div>
-                <p class="fonctionnement__btn__txt">Choisissez un restaurants</p>
-            </div>
 
-            <div class="fonctionnement__btn">
-                <div class="fonctionnement__btn__logo">
-                    <i class="fas fa-bars"></i>
+                <div class="fonctionnement__btn">
+                    <div class="fonctionnement__btn__logo">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <p class="fonctionnement__btn__txt">Composez votre menu</p>
                 </div>
-                <p class="fonctionnement__btn__txt">Composez votre menu</p>
-            </div>
 
-            <div class="fonctionnement__btn">
-                <div class="fonctionnement__btn__logo">
-                    <i class="fas fa-store"></i>
+                <div class="fonctionnement__btn">
+                    <div class="fonctionnement__btn__logo">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <p class="fonctionnement__btn__txt">Dégustez au restaurant</p>
                 </div>
-                <p class="fonctionnement__btn__txt">Dégustez au restaurant</p>
             </div>
 
         </section>
 
         <section class="section_rest">
             <h2 class="section_rest__titre">Restaurants</h2>
-            <a href="menu_la_palette_du_gout.html">
-            <div class="section_rest__cards la_palette_du_gout">
-                <img class="section_rest__cards__img" src="images/restaurants/la_palette_du_gout.jpg" alt="">
-                 <!--<span class="section_rest__cards__annonce">Nouveau</span>-->
-                <div class="section_rest__cards__txts">
-                    <h4 class="section_rest__cards__txts__titre">La palette du goût</h4>
-                    <div class="section_rest__cards__txts__lieu">Ménilmontant</div>
-                    <div class="section_rest__cards__txts__coeur">
-                        <i class="far fa-heart"></i>
-                        <!--<i class="far fa-heart"></i>-->
-                        
-                    </div>
-                </div>
 
-            </div></a>
-            <a href="menu_la_note_enchantee.html">
+            <div class="section_rest__groupe__cards ">
+                <a href="menu_la_palette_du_gout.html" class="item1">
+                <div class="section_rest__cards la_palette_du_gout">
+                    <img class="section_rest__cards__img" srcset="images/restaurants/la_palette_du_gout_small.jpg 800w,
+                    images/restaurants/la_palette_du_gout_medium.jpg 1222w" sizes="(max-width:768px) 800px, 1222px" 
+                    src="images/restaurants/la_palette_du_gout_large.jpg" alt="">
+                     <!--<span class="section_rest__cards__annonce">Nouveau</span>-->
+                    <div class="section_rest__cards__txts">
+                        <h4 class="section_rest__cards__txts__titre">La palette du goût</h4>
+                        <div class="section_rest__cards__txts__lieu">Ménilmontant</div>
+                        <div class="section_rest__cards__txts__coeur">
+                            <i class="far fa-heart"></i>
+                            <!--<i class="far fa-heart"></i>-->
+
+                        </div>
+                    </div>
+
+                </div></a>
+                <a href="menu_la_note_enchantee.html" class="item2">
             <div class="section_rest__cards la_note_enchantee">
-                <img class="section_rest__cards__img" src="images/restaurants/la_note_enchantée.jpg" alt="">
+                <img class="section_rest__cards__img" src="images/restaurants/la_note_enchantée_small.jpg" alt="">
                  <!--<span class="section_rest__cards__annonce">Nouveau</span>-->
                 <div class="section_rest__cards__txts">
                     <h4 class="section_rest__cards__txts__titre">la note enchantée</h4>
@@ -93,10 +100,10 @@
                     </div>
                 </div>
 
-            </div></a>
-            <a href="menu_a_la_française.html">
+                </div></a>
+                <a href="menu_a_la_française.html" class="item3">
             <div class="section_rest__cards a_la_française">
-                <img class="section_rest__cards__img" src="images/restaurants/a_la_française.jpg" alt="">
+                <img class="section_rest__cards__img" src="images/restaurants/a_la_française_small.jpg" alt="">
                  <!--<span class="section_rest__cards__annonce">Nouveau</span>-->
                 <div class="section_rest__cards__txts">
                     <h4 class="section_rest__cards__txts__titre">À la française</h4>
@@ -108,10 +115,10 @@
                     </div>
                 </div>
 
-            </div></a>
-            <a href="menu_le_delice_des_sens.html">
+                </div></a>
+                <a href="menu_le_delice_des_sens.html" class="item4">
             <div class="section_rest__cards le_delice_des_sens">
-                <img class="section_rest__cards__img" src="images/restaurants/le_delice_des_sens.jpg" alt="">
+                <img class="section_rest__cards__img" src="images/restaurants/le_delice_des_sens_small.jpg" alt="">
                  <!--<span class="section_rest__cards__annonce">Nouveau</span>-->
                 <div class="section_rest__cards__txts">
                     <h4 class="section_rest__cards__txts__titre">Le délice des sens</h4>
@@ -123,27 +130,27 @@
                     </div>
                 </div>
 
-            </div></a>
-            
+                </div></a>
+            </div>
         </section>
         
         <footer class="footer">
             <div class="footer__logo logo-foot">ohmyfood</div>
             <ul class="footer__list">      
                 <li class="footer__list__liens">
-                    <a class="footer__list__liens">
+                    <a class="footer__list__liens" href="#">
                     <span Class="footer__list__liens__logo   logo-foot"><i class="fas fa-utensils"></i></span>
                     <p class="footer__list__liens__txt">Proposer un restaurant</p>
                     </a>
                 </li>
                 <li class="footer__list__liens">
-                    <a class="footer__list__liens">
+                    <a class="footer__list__liens" href="#">
                     <span Class="footer__list__liens__logo  logo-foot"><i class="fas fa-hands-helping"></i></span>
                     <p class="footer__list__liens__txt">Devenir partenaire</p>
                     </a>
                 </li>
-                <li class="footer__list__liens"><a class="footer__list__liens">Mentions légales</a></li>
-                <li class="footer__list__liens"><a class="footer__list__liens">Contact</a></li>
+                <li class="footer__list__liens"><a href="#" class="footer__list__liens">Mentions légales</a></li>
+                <li class="footer__list__liens"><a href="mailto:eric2022contact@gmail.com" class="footer__list__liens">Contact</a></li>
             </ul>
         </footer>
     </body>

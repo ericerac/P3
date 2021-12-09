@@ -1,14 +1,16 @@
-@mixin heart{
+mixin heart{
     background: linear-gradient(45deg, #f5baef, #a05adc);
         font-weight: bold;
         background-clip: text; 
         -webkit-text-fill-color: transparent;
         z-index: 1;
         opacity:0;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
 
 @mixin footer{
+    
     width: 100%;
     height: 13rem;
     display: flex;
@@ -21,7 +23,7 @@
     &__logo{
         width: 80%;
         margin: 2rem auto .5rem 3rem;
-        color:rgb(255, 255, 255);
+        color:$coltxtfoot;
         font-family: "Shrikhand";
         font-size: 1.1rem;
 
@@ -37,6 +39,7 @@
         padding-top: .2rem;
 
         &__liens{
+            text-decoration: none;
             display: flex;
             flex-direction: row;
             margin: 0 auto 0 0 ;
@@ -98,18 +101,16 @@
     opacity:0;
 }
 
-
-
-@mixin annonce($txt:"", $txtcol:rgb(2, 209, 95),$bgcol:$colter){
+@mixin annonce($content:"", $txtcol:rgb(6, 122, 58),$bgcol:$colter){
     &::after{
-        content: $txt;
+        content: $content;
         padding: 0 .5rem;
         height: 1.8rem;
         line-height: 1.8rem;
         margin: 0;
         border-radius: .3rem;
         font-size: .8rem;
-        color:rgb(2, 209, 95);
+        color:$txtcol;
         vertical-align: center;
         background: $colter;
         text-align: center;
@@ -120,9 +121,12 @@
        
     }
 }
+
 @mixin anim-item ($delay:.1s){
-    animation: opac $delay $CourbeBezier forwards;
+    animation: opac .6s cubic-bezier(0.5, 1.58, 0.34, 0.82) $delay forwards;
+    
 }
+
 @mixin heart {
     display: inline-block;
     font-size: 25px;     
@@ -131,7 +135,8 @@
    
     
     &:hover::before{
-        transition:  .5s;
+        animation: coeur  .6s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+        transition-duration: 1s;
         background: linear-gradient(45deg, #f5baef, #a05adc);
         font-weight: bold;
         background-clip: text; 
@@ -143,8 +148,16 @@
 }
 @mixin btn{
     &:hover{
-        opacity: .9;
+        opacity: .8;
         box-shadow: .1rem .1rem .5rem rgba(0, 0, 0,.7);
 
+    }
+}
+@keyframes coeur{
+    0%{
+        background:opacity(0);
+    }
+    100%{
+        background:opacity(1);
     }
 }

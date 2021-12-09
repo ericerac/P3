@@ -4,6 +4,8 @@
 @import "mixins.scss";
 
     
+        
+    
 
 /* $colpri:#9356DC;
 $colsec:#FF79DA;
@@ -12,7 +14,7 @@ $colgrey:#f4f4f4;
 $colfoot:#000000;
 <<<<<<< Updated upstream
 $colgreyfosc:#e4e4e4;*/
-
+@media screen and (max-width:768px){
 
 *{box-sizing: border-box;}
 
@@ -23,6 +25,7 @@ body{
     margin: 0 auto;  
     min-width: 20rem;  
 }
+
 a {
     text-decoration: none;
     color:black;
@@ -36,7 +39,6 @@ a {
     @include spin-load($colpri,.1s);
   
   }
-
 .spinner__spin2 {
     @include spin-load($colsec,.2s,53% );
   }
@@ -62,7 +64,6 @@ a {
         
     }
 }
-
 @keyframes opac{
     0% {
         opacity: 0.3;
@@ -70,7 +71,7 @@ a {
     90%{
         opacity: 0.3;
     }
-    99% {
+    90% {
         opacity: 0.3;
     }
     100% {
@@ -109,6 +110,7 @@ a {
     
 
 }
+
 .header{
     @include header(hidden);
 }
@@ -192,31 +194,33 @@ a {
 /* FONCTIONNEMENT*/
 
 .fonctionnement{
-    width: 100%;
+    width: 90%;
     height: auto;
     margin: 1rem auto 0 auto;
     padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 
     &__titre{
-        text-align:start;
+        display: flex;
+        text-align:left;
     }
     &__btn{
         display: flex;
-        width: 90%;
+        width: 100%;
         height: 4.6rem;
         background-color:$colgrey ;
-        border-radius: 20px;
-        margin:10px auto;
+        border-radius: 1.25rem;
+        margin:.7rem auto;
         align-items: center;
         justify-content: flex-start;
         position: relative;
         box-shadow: .3rem .3rem 1rem .1rem rgba(0, 0, 0,.15);
 
         &::before{
-            content:"1";
+            counter-increment: fonctionnement__groupe__btn;
+            content: counter(fonctionnement__groupe__btn);
             position: absolute;
             width: 24px;
             height: 20px;
@@ -227,82 +231,82 @@ a {
             color:white;
             font-size: 13px;
             padding-top: 5px;
-            
-           
+                      
         }
-        
-        
-
-        /*&__num{
-            padding:7px 10px;
-            text-align: center;      
-            background-color: $colpri;
-            border-radius: 50%;
-            margin-left: -10px;
-            color:white;
-            font-size: 13px;
-            font-weight: bold;
-
-
-        }*/
-
+              
         &__logo{
             position: absolute;
             bottom:36%;
-            left:35px;
+            left:2.2rem;
         }
 
         &__txt{
             text-align: center;
-            margin: 25px auto;
+            margin: 1.6rem auto;
         }
     }
 
 }
-.fonctionnement__btn:focus :nth-child(3){
-    background: #f5baef;
+
+.fonctionnement__groupe__btn {
+    counter-reset: fonctionnement__groupe__btn;
+    padding: 0;
+    list-style-type: none;
             
 }
 
-                       /* RESTAURANTS*/
+/* RESTAURANTS*/
 
-
-.section_rest{
-    display: flex;
-    flex-direction: column;
-    height: 76rem;
-    background-color: $colgrey;
-    width: 100%;
-    margin:0 auto;
-    
-    
-    &__titre{
-        width: 90%;
-        margin:1rem 5%;
-       /* margin: 1rem auto;text-align: center;  MEDIA QUERIES*/ 
-    }
-}
 .la_palette_du_gout{
     @include annonce("Nouveau");
 }
 .la_note_enchantee{
     @include annonce("Nouveau");
 }
+.À_la_française{
+    @include annonce();
+}
+.le_delice_des_sens{
+    @include annonce();
+}
+
+
+.section_rest{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: $colgrey;
+    width: 100%;
+    margin:0 auto;
+    padding-bottom: 3rem;
+    
+    &__titre{
+        width: 90%;
+        margin:1rem 5%;
+       /* margin: 1rem auto;text-align: center;  MEDIA QUERIES*/ 
+    }
+    &__groupe__cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
 
 .section_rest__cards{
         display:flex;
         width: 90%;
         height: 15rem;
         position:relative;
-        margin: 10px auto;
+        margin: .8rem auto;
         box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
         border-radius:1.2rem;
 
         &__img{
-            width: 100%;
-            height: 15rem;
+            min-width: 100%;
+            height: auto;
             border-radius:1.2rem;
-            
+            object-fit: cover;
             position: relative;
             
         
@@ -397,4 +401,4 @@ a {
 }
 
 
-
+}

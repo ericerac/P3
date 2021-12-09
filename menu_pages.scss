@@ -1,5 +1,5 @@
 
-@import "variables";
+
 /*$colpri:#9356DC;
 $colsec:#FF79DA;
 $colter:#99E2D0;
@@ -7,8 +7,12 @@ $colgrey:#f4f4f4;
 $colfoot:#000000;
 $colgreyfosc:#e4e4e4;
 $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
+@media (max-width:768px) {
+    
 
 
+    
+@import "variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "mixins";
@@ -29,15 +33,17 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
 }
 @keyframes opac{
-     0%{
-         scale:(0);
+     0%{ 
+         opacity:(0);
+         transform:translateY(20px);
      }
-    100%{
-        scale:(1);
+     
+     
+    100%{ 
+        opacity:(1);
+        transform :translateY(0px);
     }
 }
-
-
 
 body{
     margin: 0 auto;
@@ -51,6 +57,7 @@ body{
     @include header(visible);
     min-width: 20rem;
 }
+
 .main{
     width: 100%;
     height: auto;
@@ -63,13 +70,12 @@ body{
     }
     &__img{
         display:flex;
-        width: 100%;
+        min-width: 100%;
         height:20rem;
         max-height: 25rem;
         object-fit:cover;
     }
 }
-
 .main__section{
     display:flex;
     flex-direction: column;
@@ -105,18 +111,16 @@ body{
     }
 
     
-.container{
-    display:grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 5fr;
+.container{    
     margin-bottom: .6rem;
     margin-top: .6rem;
     justify-content: left;
     display: flex;
     flex-direction: column;  
-    justify-content: space-around;  
-    
+    justify-content: space-around;     
 }
+
+
 .entrees__items__list {
    list-style-type: none;
    margin:0;
@@ -125,40 +129,43 @@ body{
 
 
 .item-1{
-    @include anim-item;
+    @include anim-item ($delay:.01s);
 }
 .item-2{
-    @include anim-item($delay:.3s);
+    @include anim-item($delay:.07s);
 }
 .item-3{
-    @include anim-item($delay:.45s);
+    @include anim-item($delay:.13s);
 }
 .item-4{
-    @include anim-item($delay:.6s);
+    @include anim-item($delay:.2s);
 }
 .item-5{
-    @include anim-item($delay:.75s);
+    @include anim-item($delay:.27s);
 }
 .item-6{
-    @include anim-item($delay:.9s);
+    @include anim-item($delay:.34s);
 }
 .item-7{
-    @include anim-item($delay:1.05s);
+    @include anim-item($delay:.40s);
 }
 .item-8{
-    @include anim-item($delay:1.2s);
+    @include anim-item($delay:.46s);
 }
 .item-9{
-    @include anim-item($delay:1.35s);
+    @include anim-item($delay:.52s);
 }
 
 
-@for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i}+.1s}}
+@for $i from 1 through 9 { .item-#{$i} {animation-delay: (#{$i} * .15s)}}
 
 
 .item{
     background-color : white;
     box-shadow: .2rem .2rem .9rem rgba($color: #000000, $alpha: .1);
+    
+    
+    
     
 }
 .section__titre{
@@ -181,16 +188,15 @@ body{
     }
 }
 .entrees__items, .plats__items, .desserts__items{
-                 
+                 display:flex;
                  position:relative;               
                  width: 90%;   
                  margin: .45rem auto;
-                 border-radius: 1.2rem;
-                 display:flex;
+                 border-radius: 1.2rem;                 
                  padding-left: .7rem;
                  cursor: pointer;
                  overflow: hidden;
-                 
+                 opacity: (0);
                  
                     
                 &__plat{
@@ -220,6 +226,7 @@ body{
                     
                        
                     &__detail{
+                        display:flex;
                         font-size: 1rem;
                         margin-top: .3rem;
                         margin-bottom: .75rem;
@@ -229,28 +236,34 @@ body{
                         overflow: hidden;
                         color:rgba(0, 0, 0,.5);
                     }
-                     
-                    
+                                       
                  
-                 &__prix{
+                    &__prix{
                      display:flex;
+                     width: 3rem;
                      font-size: .9rem;
                      font-weight: bold;
-                    position:absolute;
+                     align-content: flex-end;
+                     line-height: 70px;
+                     margin-bottom: 0rem;
+
+                    
+                
                     right: 1.5rem;
                     bottom: .7rem;
                     height: auto;
                     transition-duration: .7s;
-                 }
+                    }
                 
                 &:hover &__prix{
-                    transform: translateX()
+                    transform: translateX(-4.2rem)
 
                 }
                 
                 
                 &__choisir{
                     display:flex;
+                    position:relative;
                     width: 4.2rem;
                     justify-content: center;
                     align-items: center;
@@ -263,6 +276,7 @@ body{
                 &:hover &__choisir{
                     transform: translateX(-4.3rem);
                 }
+
                 &__icon{
                     transition-duration: .7s;
 
@@ -271,13 +285,12 @@ body{
                 &:hover &__icon {
                     transform:rotate(-1turn);
                 }   
-            
-                
-                 
+                          
 }
 
 
 .fas.fa-check {
+            
             color:$colter;
             font-weight: bolder;
             width: 1.3rem;
@@ -304,6 +317,7 @@ body{
     cursor: pointer;
     @include btn;
 }
-        .footer{
+.footer{
             @include footer;
         }
+}
