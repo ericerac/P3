@@ -354,9 +354,6 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     padding-top: .2rem;
   }
   .entrees__items__detail, .plats__items__detail, .desserts__items__detail {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     font-size: 1rem;
     margin-top: .3rem;
     margin-bottom: .75rem;
@@ -367,9 +364,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     color: rgba(0, 0, 0, 0.5);
   }
   .entrees__items__prix, .plats__items__prix, .desserts__items__prix {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    position: relative;
     width: 3rem;
     font-size: .9rem;
     font-weight: bold;
@@ -377,8 +372,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         align-content: flex-end;
     line-height: 70px;
     margin-bottom: 0rem;
-    right: 1.5rem;
-    bottom: .7rem;
+    bottom: -1rem;
     height: auto;
     -webkit-transition-duration: .7s;
             transition-duration: .7s;

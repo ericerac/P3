@@ -226,7 +226,6 @@ body{
                     
                        
                     &__detail{
-                        display:flex;
                         font-size: 1rem;
                         margin-top: .3rem;
                         margin-bottom: .75rem;
@@ -239,20 +238,16 @@ body{
                                        
                  
                     &__prix{
-                     display:flex;
-                     width: 3rem;
-                     font-size: .9rem;
-                     font-weight: bold;
-                     align-content: flex-end;
-                     line-height: 70px;
-                     margin-bottom: 0rem;
-
-                    
-                
-                    right: 1.5rem;
-                    bottom: .7rem;
-                    height: auto;
-                    transition-duration: .7s;
+                        position:relative;
+                        width: 3rem;
+                        font-size: .9rem;
+                        font-weight: bold;
+                        align-content: flex-end;
+                        line-height: 70px;
+                        margin-bottom: 0rem;                              
+                        bottom: -1rem;
+                        height: auto;
+                        transition-duration: .7s;
                     }
                 
                 &:hover &__prix{
