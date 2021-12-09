@@ -7,7 +7,7 @@ $colgrey:#f4f4f4;
 $colfoot:#000000;
 $colgreyfosc:#e4e4e4;
 $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
-@media screen and (min-width:992px)  {
+@media screen and (min-width:75rem)  {
     
 
 
@@ -46,6 +46,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         }
     }
     
+
+    
     body{
         margin: 0 auto;
         padding: 0;
@@ -66,98 +68,16 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         
         &__photo{
             width: 100%;
-            height: 20rem;
+            height: 35rem;
             max-height: 25rem;
         }
         &__img{
             display:flex;
             width: 100%;
-            height:20rem;
-            max-height: 25rem;
-            object-fit:cover;
-        }
-    }
-    .main__section{
-       
-        
-    }
-.entrees{
-    
-}
-.plats{
-    
-  }
-.desserts{
-    
-}
-.main__section__NomRestaurant{
-    
-}
-
-
-/*$colpri:#9356DC;
-$colsec:#FF79DA;
-$colter:#99E2D0;
-$colgrey:#f4f4f4;
-$colfoot:#000000;
-$colgreyfosc:#e4e4e4;
-$col-titre-detail-section-menu:rgba(0,0,0,.5)*/
-
-    
-
-
-    
-    @import "variables";
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-    @import "mixins";
-    
-    @keyframes mgr{
-         100%{
-            margin-right:6rem;
-            background: rgb(151, 150, 150);
-        }
-    }
-    @keyframes choix{
-         0%{
-            transform:translateX(0)
+            height:35rem;
             
-        }
-        100%{
-            transform:translateX(-4.3rem)
-        }
-    }
-
-    
-    body{
-        margin: 0 auto;
-        padding: 0;
-        box-sizing: border-box ;
-        font-family: "roboto", sans-serif;
-        min-width: 20rem;
-    }
-    
-    .header{
-        @include header(visible);
-        min-width: 20rem;
-    }
-    
-    .main{
-        width: 100%;
-        height: auto;
-        min-width: 20rem;
-        
-        &__photo{
-            width: 100%;
-            height: 20rem;
-            max-height: 25rem;
-        }
-        &__img{
-            display:flex;
-            width: 100%;
-            height:20rem;
-            max-height: 25rem;
             object-fit:cover;
+            object-position:0rem -17rem;
         }
     }
     .main__section{
@@ -165,7 +85,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         
             width: 100%;
             height: auto;
-            margin: -4rem auto 0 auto;
+            margin: 0 auto 0 auto;
             z-index: 1;
             border-radius: 2rem 2rem 0 0 ;
             background-color:$colgrey ;
@@ -179,11 +99,17 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                 margin: 0 auto;
                 align-items: baseline;
                 justify-content: space-between;
+                position: absolute;
+                top:-5rem;
+                left:2rem;
+                color:  white;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0,.5);
+
                
     
                 &__titre{
                     font-family: "Shrikhand";
-                    font-size: 2rem;
+                    font-size: 3rem;
                     margin-bottom: 1.2rem;
                     
                 }
@@ -197,6 +123,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         width: 100%;
         justify-content: space-evenly;
         transition: .15s;
+        margin-top:2.5rem;
     }
     .far.fa-heart{
             @include heart;
@@ -213,7 +140,15 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         justify-content: space-around;  
         
     }
-  
+    .items__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+       list-style-type: none;
+       width: 100%;
+       margin:0;
+       padding: 0;
+    }
     
     
     
@@ -247,7 +182,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     
     
-    @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i}*.1s}}
+    @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i} + 60ms}}
     
     
     .item{
@@ -297,7 +232,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                          overflow: hidden;
                          position: relative;
                          flex:1;
-                        
+                        transition: .7s;
                     }
                          
                     &:hover &__plat{
@@ -305,31 +240,44 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                     }
                        
                     &__titre{
-                            margin:.7rem 0 .5 0 ;
-                            font-size: 1.1rem;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            padding-top:.2rem;
+                        margin:.7rem 0 .5 0 ;
+                        font-size: 1.1rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        padding-top:.2rem;
                     }
                         
                            
                     &__detail{
-                            display:block;
-                            font-size: 1rem;
-                            margin-top: .3rem;
-                            margin-bottom: .75rem;
-                            margin-right: 0;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            color:rgba(0, 0, 0,.5);
+                        
+                        font-size: 1rem;
+                        margin-top: .3rem;
+                        margin-bottom: .75rem;
+                        margin-right: 0;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color:rgba(0, 0, 0,.5);
+                    }
+                    &__prix{
+                        position:relative;
+                        width: 3rem;
+                        font-size: .9rem;
+                        font-weight: bold;
+                        align-content: flex-end;
+                        line-height: 70px;
+                        margin-bottom: 0rem;                              
+                        bottom: -1rem;
+                        height: auto;
+                        transition-duration: .7s;
+                    }
+                    &:hover &__prix{
+                        transform: translateX(-4.2rem);
+             
                     }
                                            
-                     
-                    
-                    
-                    
+                                        
                     &__choisir{
                         display:flex;
                         width: 4.2rem;
@@ -357,24 +305,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                     
                      
     }
-    .entrees__items, .plats__items, .desserts__items{
-        &__prix{
-            display:flex;
-            font-size: .9rem;
-            font-weight: bold;
-           position:absolute;
-           right: 1.5rem;
-           bottom: .7rem;
-           height: auto;
-           transition-duration: .7s;
-       }
-       
-       &:hover &__prix{
-           transform: translateX(-4.2rem);
-
-       }
-    }
-    
+  
     .fas.fa-check {
                 color:$colter;
                 font-weight: bolder;

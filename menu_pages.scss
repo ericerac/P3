@@ -121,10 +121,15 @@ body{
 }
 
 
-.entrees__items__list {
+.items__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
    list-style-type: none;
+   width: 100%;
    margin:0;
    padding: 0;
+   margin-bottom: 1rem;
 }
 
 
@@ -196,8 +201,7 @@ body{
                  padding-left: .7rem;
                  cursor: pointer;
                  overflow: hidden;
-                 opacity: (0);
-                 
+                 opacity: (0);                
                     
                 &__plat{
                      height: auto;
@@ -223,8 +227,7 @@ body{
                         overflow: hidden;
                         padding-top:.2rem;
                     }
-                    
-                       
+                                          
                     &__detail{
                         font-size: 1rem;
                         margin-top: .3rem;
@@ -235,8 +238,7 @@ body{
                         overflow: hidden;
                         color:rgba(0, 0, 0,.5);
                     }
-                                       
-                 
+                                                       
                     &__prix{
                         position:relative;
                         width: 3rem;
@@ -254,8 +256,7 @@ body{
                     transform: translateX(-4.2rem)
 
                 }
-                
-                
+                                
                 &__choisir{
                     display:flex;
                     position:relative;
