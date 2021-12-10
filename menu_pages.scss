@@ -1,17 +1,7 @@
 
 
-/*$colpri:#9356DC;
-$colsec:#FF79DA;
-$colter:#99E2D0;
-$colgrey:#f4f4f4;
-$colfoot:#000000;
-$colgreyfosc:#e4e4e4;
-$col-titre-detail-section-menu:rgba(0,0,0,.5)*/
+
 @media (max-width:768px) {
-    
-
-
-    
 @import "variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -162,7 +152,7 @@ body{
 }
 
 
-@for $i from 1 through 9 { .item-#{$i} {animation-delay: (#{$i} * .15s)}}
+@for $i from 1 through 9 { .item-#{$i} {animation-delay: (#{$i} + .07s)}}
 
 
 .item{

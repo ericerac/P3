@@ -19,6 +19,7 @@
 }
 
 @media screen and (min-width: 84.5rem) {
+  /*1352px*/
   * {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
