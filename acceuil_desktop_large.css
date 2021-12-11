@@ -532,6 +532,8 @@
     height: 15rem;
     border-radius: 1.2rem;
     position: relative;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .section_rest__cards__txts {
     display: block;
@@ -574,7 +576,7 @@
   .section_rest__groupe__cards {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)(4);
+    -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
