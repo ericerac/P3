@@ -55,7 +55,7 @@
     display: flex;
     width: 100%;
     height: 3.2rem;
-    margin: 0 auto;
+    margin: 0 auto ;
     font-size: 1.2rem;
     justify-content: center;
     position: relative;
@@ -64,13 +64,14 @@
     &__fleche{
         position: absolute;
         left:1.5rem;
-        bottom: 1.3rem;   
+        bottom: .8rem;   
         visibility: $VisibilityFleche; 
         color:black;         
     }
 
     &__logo__img{
         margin-top: 1.25rem;
+        margin-bottom: .8rem;
         height: 1.9rem ;
         
     }
@@ -129,16 +130,16 @@
     display: inline-block;
     font-size: 1.5rem;     
     z-index: 1;
-    opacity: 0;    
+    opacity: 1;    
     transition-duration: 1s;
     &:hover::before{
         animation: coeur  1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
        
         background: linear-gradient(45deg, #f5baef, #a05adc);
-        font-weight: bold;
+        
         background-clip: text; 
         -webkit-text-fill-color: transparent;
-        z-index: 1;
+        z-index: 10;
         opacity:0;       
     }
 }

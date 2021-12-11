@@ -1,4 +1,17 @@
-@media (max-width:768px) {
+
+
+/*$colpri:#9356DC;
+$colsec:#FF79DA;
+$colter:#99E2D0;
+$colgrey:#f4f4f4;
+$colfoot:#000000;
+$colgreyfosc:#e4e4e4;
+$col-titre-detail-section-menu:rgba(0,0,0,.5)*/
+@media screen and (min-width:992px) and (max-width:1200px) {
+    
+
+
+    
     @import "variables";
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -20,17 +33,20 @@
         }
     }
     @keyframes opac{
-         0%{ 
+         0%{
+             scale:(0);
              opacity:(0);
-             transform:translateY(20px);
-         }
-         
-         
-        100%{ 
+             transform:translateY(10px)
+         }      
+                 
+        100%{
+            scale:(1);
             opacity:(1);
-            transform :translateY(0px);
+            transform :translateY(0px)
         }
     }
+    
+
     
     body{
         margin: 0 auto;
@@ -52,23 +68,22 @@
         
         &__photo{
             width: 100%;
-            height: 20rem;
+            height: 35rem;
             max-height: 25rem;
         }
         &__img{
             display:flex;
-            min-width: 100%;
-            height:20rem;
-            max-height: 25rem;
+            width: 100%;
+            height:35rem;           
             object-fit:cover;
+            object-position:0rem -10rem;
         }
     }
     .main__section{
-        display:flex;
-        flex-direction: column;
+            display:flex;        
             width: 100%;
             height: auto;
-            margin: -4rem auto 0 auto;
+            margin: 0 auto 0 auto;
             z-index: 1;
             border-radius: 2rem 2rem 0 0 ;
             background-color:$colgrey ;
@@ -78,14 +93,21 @@
     
             &__NomRestaurant{
                 display: flex;
-                
+                width: 90%;
+                margin: 0 auto;
                 align-items: baseline;
                 justify-content: space-between;
-                margin: 1rem 1.8rem 0 1.8rem;
+                position: absolute;
+                top:-5rem;
+                left:2rem;
+                color:  white;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0,.5);
+
+               
     
                 &__titre{
                     font-family: "Shrikhand";
-                    font-size: 2rem;
+                    font-size: 3rem;
                     margin-bottom: 1.2rem;
                     
                 }
@@ -93,6 +115,17 @@
     
         
         }
+    .main__section__cards{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        transition: .15s;
+        margin-top:2.5rem;
+        position: relative;
+        padding-bottom: 6rem;
+        align-items: baseline;
+    }
     .far.fa-heart{
         display: inline-block;
     font-size: 1.5rem;     
@@ -101,7 +134,7 @@
     
     &:hover::before{
         animation-name: coeur ;
-        background: linear-gradient(45deg, #f5baef, #a05adc);
+        background: linear-gradient(145deg, #fdd0f9,#fdbdf8, #a05adc);
         transition-duration: 1s;
         font-weight: bold;
         background-clip: text; 
@@ -110,38 +143,29 @@
         opacity:1;       
         }
     }
-    @keyframes coeur{
-        0%{
-            background:opacity(0.1);
-        }
-        
-    
-        100%{
-            background:opacity(1);
-        }
-    }
     
         
-    .container{    
+    .container{
+        display:flex;
+        width: 32%;
         margin-bottom: .6rem;
         margin-top: .6rem;
         justify-content: left;
-        display: flex;
         flex-direction: column;  
-        justify-content: space-around;     
+        justify-content: space-around;  
+        
     }
-    
-    
     .items__list {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
        list-style-type: none;
-       width: 100%;
+       width: 95%;
        margin:0;
        padding: 0;
-       margin-bottom: 1rem;
     }
+    
+    
     
     
     .item-1{
@@ -173,18 +197,16 @@
     }
     
     
-    @for $i from 1 through 9 { .item-#{$i} {animation-delay: (#{$i} + .07s)}}
+    @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i} + 60ms}}
     
     
     .item{
         background-color : white;
         box-shadow: .2rem .2rem .9rem rgba($color: #000000, $alpha: .1);
         
-        
-        
-        
     }
     .section__titre{
+        display: inline-block;
         width: 90%;
         font-family: "roboto";
         text-transform: uppercase;
@@ -204,15 +226,17 @@
         }
     }
     .entrees__items, .plats__items, .desserts__items{
-                     display:flex;
+                     
                      position:relative;               
-                     width: 90%;   
+                     width: 100%;   
                      margin: .45rem auto;
-                     border-radius: 1.2rem;                 
+                     border-radius: 1.2rem;
+                     display:flex;
                      padding-left: .7rem;
                      cursor: pointer;
                      overflow: hidden;
-                     opacity: (0);                
+                     transform: scale(0);
+                     
                         
                     &__plat{
                          height: auto;
@@ -223,54 +247,54 @@
                          overflow: hidden;
                          position: relative;
                          flex:1;
-                        transition-duration: .7s ;
+                        transition: .7s;
                     }
                          
                     &:hover &__plat{
                         margin-right:4.3rem;
                     }
                        
-                        &__titre{
-                            margin:.7rem 0 .5 0 ;
-                            font-size: 1.1rem;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            padding-top:.2rem;
-                        }
-                                              
-                        &__detail{
-                            font-size: 1rem;
-                            margin-top: .3rem;
-                            margin-bottom: .75rem;
-                            margin-right: 0;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            color:rgba(0, 0, 0,.5);
-                        }
-                                                           
-                        &__prix{
-                            position:relative;
-                            width: 3rem;
-                            font-size: .9rem;
-                            font-weight: bold;
-                            align-content: flex-end;
-                            line-height: 70px;
-                            margin-bottom: 0rem;                              
-                            bottom: -1rem;
-                            height: auto;
-                            transition-duration: .7s;
-                        }
-                    
-                    &:hover &__prix{
-                        transform: translateX(-4.2rem)
-    
+                    &__titre{
+                        margin:.7rem 0 .5 0 ;
+                        font-size: 1.1rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        padding-top:.2rem;
                     }
-                                    
+                        
+                           
+                    &__detail{
+                        
+                        font-size: 1rem;
+                        margin-top: .3rem;
+                        margin-bottom: .75rem;
+                        margin-right: 0;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color:rgba(0, 0, 0,.5);
+                    }
+                    &__prix{
+                        position:relative;
+                        width: 3rem;
+                        font-size: .9rem;
+                        font-weight: bold;
+                        align-content: flex-end;
+                        line-height: 70px;
+                        margin-bottom: 0rem;                              
+                        bottom: -1rem;
+                        height: auto;
+                        transition-duration: .7s;
+                    }
+                    &:hover &__prix{
+                        transform: translateX(-4.2rem);
+             
+                    }
+                                           
+                                        
                     &__choisir{
                         display:flex;
-                        position:relative;
                         width: 4.2rem;
                         justify-content: center;
                         align-items: center;
@@ -292,12 +316,12 @@
                     &:hover &__icon {
                         transform:rotate(-1turn);
                     }   
-                              
-    }
-    
-    
-    .fas.fa-check {
                 
+                    
+                     
+    }
+  
+    .fas.fa-check {
                 color:$colter;
                 font-weight: bolder;
                 width: 1.3rem;
@@ -322,9 +346,12 @@
         box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
         transition-duration: .3s;
         cursor: pointer;
+        position: absolute;
+        bottom: -2.5rem;
         @include btn;
     }
-    .footer{
+            .footer{
                 @include footer;
             }
-    }
+        
+}

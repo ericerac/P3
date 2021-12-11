@@ -7,7 +7,7 @@ $colgreyfosc:#e4e4e4;
 $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@media screen and (min-width: 75rem) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   @-webkit-keyframes coeur {
     0% {
       background: opacity(0);
@@ -139,8 +139,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     height: 35rem;
     -o-object-fit: cover;
        object-fit: cover;
-    -o-object-position: 0rem -17rem;
-       object-position: 0rem -17rem;
+    -o-object-position: 0rem -10rem;
+       object-position: 0rem -10rem;
   }
   .main__section {
     display: -webkit-box;
@@ -205,23 +205,24 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     font-size: 1.5rem;
     z-index: 1;
     opacity: 1;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
   }
   .far.fa-heart:hover::before {
-    -webkit-animation: coeur 1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
-            animation: coeur 1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
-    background: linear-gradient(45deg, #f5baef, #a05adc);
+    -webkit-animation-name: coeur;
+            animation-name: coeur;
+    background: linear-gradient(145deg, #fdd0f9, #fdbdf8, #a05adc);
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    font-weight: bold;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 10;
-    opacity: 0;
+    opacity: 1;
   }
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 30%;
+    width: 32%;
     margin-bottom: .6rem;
     margin-top: .6rem;
     -webkit-box-pack: left;
@@ -246,7 +247,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     list-style-type: none;
-    width: 100%;
+    width: 95%;
     margin: 0;
     padding: 0;
   }
@@ -311,7 +312,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
   }
   .entrees__items, .plats__items, .desserts__items {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: .45rem auto;
     border-radius: 1.2rem;
     display: -webkit-box;
@@ -502,4 +503,4 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     padding-left: .2rem;
   }
 }
-/*# sourceMappingURL=menu_pages_tablette.css.map */
+/*# sourceMappingURL=menu_pages_tablet.css.map */

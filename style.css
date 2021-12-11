@@ -230,12 +230,13 @@ $colgreyfosc:#e4e4e4;*/
   .header__fleche {
     position: absolute;
     left: 1.5rem;
-    bottom: 1.3rem;
+    bottom: .8rem;
     visibility: hidden;
     color: black;
   }
   .header__logo__img {
     margin-top: 1.25rem;
+    margin-bottom: .8rem;
     height: 1.9rem;
   }
   .header, section, footer {
