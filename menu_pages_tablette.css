@@ -211,7 +211,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
   .far.fa-heart:hover::before {
     -webkit-animation: coeur 1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
             animation: coeur 1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
-    background: linear-gradient(45deg, #f5baef, #a05adc);
+    background: linear-gradient(45deg, #f5baef 30%, #a05adc 70%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 10;

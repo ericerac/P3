@@ -322,7 +322,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
             
             &:hover::before{
                 animation-name: coeur ;
-                background: linear-gradient(45deg, #f5baef, #a05adc);
+                background: linear-gradient(45deg, #f5baef 90%, #c38ef1 90%);
                 transition-duration: 1s;
                 font-weight: bold;
                 background-clip: text; 
