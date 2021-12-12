@@ -7,7 +7,7 @@ $colgrey:#f4f4f4;
 $colfoot:#000000;
 $colgreyfosc:#e4e4e4;
 $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
-@media screen and (min-width:75rem)  {
+@media screen and (min-width:768px) and (max-width:992px) {
     
 
 
@@ -76,7 +76,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
             width: 100%;
             height:35rem;           
             object-fit:cover;
-            object-position:0rem -17rem;
+            object-position:0rem -10rem;
         }
     }
     .main__section{
@@ -117,38 +117,32 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         }
     .main__section__cards{
         display:flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-evenly;
+        flex-direction: column;
+        width: 100%;      
         transition: .15s;
         margin-top:2.5rem;
         position: relative;
-        padding-bottom: 6rem;
-        align-items: baseline;
+        padding-bottom: 6rem;      
     }
-    .far.fa-heart{
-            @include heart;
-        }
-    
-        
+ 
+           
     .container{
         display:flex;
-        width: 30%;
+        flex-direction: column;  
+        width: 100%;
         margin-bottom: .6rem;
         margin-top: .6rem;
-        justify-content: left;
-        flex-direction: column;  
-        justify-content: space-around;  
         
     }
+
     .items__list {
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-       list-style-type: none;
-       width: 100%;
-       margin:0;
-       padding: 0;
+        flex-wrap: wrap;   
+        list-style-type: none;
+        width: 95%;
+        margin:0 auto;
+        padding: 0;
+        justify-content: space-between;
     }
     
     
@@ -193,10 +187,10 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     .section__titre{
         display: inline-block;
-        width: 90%;
+        width: 95%;
         font-family: "roboto";
         text-transform: uppercase;
-        margin: 0 auto;
+        margin: 0 auto 0 2rem;
         margin-bottom: 1rem;
         color:rgba($color: #000000, $alpha: .5);
         font-weight: 100;
@@ -214,8 +208,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     .entrees__items, .plats__items, .desserts__items{
                      
                      position:relative;               
-                     width: 90%;   
-                     margin: .45rem auto;
+                     width: 45%;                      
+                     margin: .5rem;
                      border-radius: 1.2rem;
                      display:flex;
                      padding-left: .7rem;
@@ -320,7 +314,23 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                 padding-left: .2rem;
                 padding-top: .1rem;
             }
-    
+            .far.fa-heart{
+                display: inline-block;
+            font-size: 1.5rem;     
+            z-index: 1;
+            opacity: 1;    
+            
+            &:hover::before{
+                animation-name: coeur ;
+                background: linear-gradient(45deg, #f5baef 90%, #c38ef1 90%);
+                transition-duration: 1s;
+                font-weight: bold;
+                background-clip: text; 
+                -webkit-text-fill-color: transparent;
+                z-index: 10;
+                opacity:1;       
+                }
+            }
     .btn-commander{
         display:inline-block;
         font-size: 1rem;
@@ -328,12 +338,14 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         background: linear-gradient(170deg, $colsec, $colpri);
         border-radius: 1.7rem;
         color:white;
-        margin: 2.5rem auto 5rem auto;
+        width: 8%;
+        margin: 3rem auto 5rem auto;
         box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
         transition-duration: .3s;
         cursor: pointer;
         position: absolute;
         bottom: -2.5rem;
+        right: 40.5%;
         @include btn;
     }
             .footer{
