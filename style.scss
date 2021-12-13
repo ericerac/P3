@@ -370,31 +370,8 @@ a {
 
 
 .far.fa-heart{
-    display: inline-block;
-        font-size: 1.5rem;     
-        z-index: 1;
-        opacity: 1;    
-        
-    &:hover::before{
-        
-        background: linear-gradient(45deg, #f5baef, #a05adc) ;
-        transition-duration: 1s;
-        font-weight: bold;
-        background-clip: text; 
-        -webkit-text-fill-color: transparent;
-        z-index: 10;
-        opacity:1;       
-        }
+    @include heart-acceuil;
     
-}
-@keyframes coeur{
-    0%{
-        background:opacity(0);
-    }
-
-    100%{
-        background:opacity(1);
-    }
 }
 
 .footer{
