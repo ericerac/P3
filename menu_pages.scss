@@ -58,6 +58,7 @@
         &__img{
             display:flex;
             min-width: 100%;
+            width: 100%;
             height:20rem;
             max-height: 25rem;
             object-fit:cover;
@@ -92,32 +93,9 @@
             }       
         }
     .far.fa-heart{
-        display: inline-block;
-    font-size: 1.5rem;     
-    z-index: 1;
-    opacity: 1;    
-    
-    &:hover::before{
-        animation-name: coeur ;
-        background: linear-gradient(45deg, #f5baef, #a05adc);
-        transition-duration: 1s;
-        font-weight: bold;
-        background-clip: text; 
-        -webkit-text-fill-color: transparent;
-        z-index: 10;
-        opacity:1;       
-        }
+        @include heart;
     }
-    @keyframes coeur{
-        0%{
-            background:opacity(0.1);
-        }
-        
     
-        100%{
-            background:opacity(1);
-        }
-    }
     
         
     .container{    
@@ -312,15 +290,17 @@
     .btn-commander{
         display:inline-block;
         font-size: 1rem;
+
         padding: 1rem 3.4rem;
         background: linear-gradient(170deg, $colsec, $colpri);
         border-radius: 1.7rem;
         color:white;
-        margin: 2.5rem auto 5rem auto;
+        margin: 1.5rem 50% 2.5rem ;
         box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
         transition-duration: .3s;
         cursor: pointer;
         @include btn;
+        transform:translateX(-50%);
     }
     .footer{
                 @include footer;

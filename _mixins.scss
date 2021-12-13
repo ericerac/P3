@@ -128,20 +128,20 @@
 
 @mixin heart {
     display: inline-block;
-    font-size: 1.5rem;     
-    z-index: 1;
-    opacity: 1;    
-    transition-duration: 1s;
-    &:hover::before{
-        animation: coeur  1s cubic-bezier(0.075, 0.82, 0.165, 1) s;
-       
-        background: linear-gradient(45deg, #f5baef 30%, #a05adc 70%);
+        font-size: 1.5rem;     
+        z-index: 1;
+        opacity: 1;    
         
+    &:hover::before{
+        
+        background: linear-gradient(45deg, #f5baef, #a05adc) ;
+        transition-duration: 1s;
+        font-weight: bold;
         background-clip: text; 
         -webkit-text-fill-color: transparent;
         z-index: 10;
-        opacity:0;       
-    }
+        opacity:1;       
+        }
 }
 
 @keyframes coeur{

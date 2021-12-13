@@ -371,24 +371,21 @@ a {
 
 .far.fa-heart{
     display: inline-block;
-    font-size: 25px;     
-    z-index: 1;
-    opacity: 1;
-    transition-duration: 1s;  
-   
-    
+        font-size: 1.5rem;     
+        z-index: 1;
+        opacity: 1;    
+        
     &:hover::before{
-        transition:  1s;
-        background: linear-gradient(45deg, #f5baef, #a05adc);
-        animation: coeur 1s ease-in-out;
-        animation-duration: 1s;
+        
+        background: linear-gradient(45deg, #f5baef, #a05adc) ;
+        transition-duration: 1s;
         font-weight: bold;
         background-clip: text; 
         -webkit-text-fill-color: transparent;
-        z-index: 1;
-        opacity:1;
-       
-    }
+        z-index: 10;
+        opacity:1;       
+        }
+    
 }
 @keyframes coeur{
     0%{

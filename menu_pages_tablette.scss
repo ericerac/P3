@@ -181,6 +181,9 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     .item-9{
         @include anim-item($delay:.52s);
     }
+    .item-10{
+        @include anim-item($delay:.59s);
+    }
     
     
     @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i} + 60ms}}

@@ -125,6 +125,7 @@
     display: -ms-flexbox;
     display: flex;
     min-width: 100%;
+    width: 100%;
     height: 20rem;
     max-height: 25rem;
     -o-object-fit: cover;
@@ -172,8 +173,6 @@
     opacity: 1;
   }
   .far.fa-heart:hover::before {
-    -webkit-animation-name: coeur;
-            animation-name: coeur;
     background: linear-gradient(45deg, #f5baef, #a05adc);
     -webkit-transition-duration: 1s;
             transition-duration: 1s;
@@ -182,14 +181,6 @@
     -webkit-text-fill-color: transparent;
     z-index: 10;
     opacity: 1;
-  }
-  @keyframes coeur {
-    0% {
-      background: opacity(0.1);
-    }
-    100% {
-      background: opacity(1);
-    }
   }
   .container {
     margin-bottom: .6rem;
@@ -437,12 +428,14 @@
     background: linear-gradient(170deg, #FF79DA, #9356DC);
     border-radius: 1.7rem;
     color: white;
-    margin: 2.5rem auto 5rem auto;
+    margin: 1.5rem 50% 2.5rem;
     -webkit-box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
             box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
     -webkit-transition-duration: .3s;
             transition-duration: .3s;
     cursor: pointer;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   .btn-commander:hover {
     opacity: .8;
