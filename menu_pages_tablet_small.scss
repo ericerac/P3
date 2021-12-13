@@ -49,7 +49,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
 
     
     body{
-        margin: 0 auto;
+        margin: 0 ;
         padding: 0;
         box-sizing: border-box ;
         font-family: "roboto", sans-serif;
@@ -152,32 +152,35 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
         @include anim-item ($delay:.01s);
     }
     .item-2{
-        @include anim-item($delay:.07s);
+        @include anim-item($delay:.06s);
     }
     .item-3{
-        @include anim-item($delay:.13s);
+        @include anim-item($delay:.12s);
     }
     .item-4{
-        @include anim-item($delay:.2s);
+        @include anim-item($delay:.19s);
     }
     .item-5{
-        @include anim-item($delay:.27s);
+        @include anim-item($delay:.25s);
     }
     .item-6{
-        @include anim-item($delay:.34s);
+        @include anim-item($delay:.31s);
     }
     .item-7{
-        @include anim-item($delay:.40s);
+        @include anim-item($delay:.38s);
     }
     .item-8{
-        @include anim-item($delay:.46s);
+        @include anim-item($delay:.45s);
     }
     .item-9{
         @include anim-item($delay:.52s);
     }
+    .item-10{
+        @include anim-item($delay:.59s);
+    }
     
     
-    @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i} + 60ms}}
+    @for $i from 1 through 10 { &__item-#{$i} {$delay: #{$i} + 10ms}}
     
     
     .item{
@@ -315,21 +318,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                 padding-top: .1rem;
             }
             .far.fa-heart{
-                display: inline-block;
-            font-size: 1.5rem;     
-            z-index: 1;
-            opacity: 1;    
-            
-            &:hover::before{
-                animation-name: coeur ;
-                background: linear-gradient(45deg, #f5baef 90%, #c38ef1 90%);
-                transition-duration: 1s;
-                font-weight: bold;
-                background-clip: text; 
-                -webkit-text-fill-color: transparent;
-                z-index: 10;
-                opacity:1;       
-                }
+                @include heart;
             }
     .btn-commander{
         display:inline-block;

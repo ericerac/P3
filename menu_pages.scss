@@ -33,7 +33,7 @@
     }
     
     body{
-        margin: 0 auto;
+        margin: 0 ;
         padding: 0;
         box-sizing: border-box ;
         font-family: "roboto", sans-serif;
@@ -95,9 +95,7 @@
     .far.fa-heart{
         @include heart;
     }
-    
-    
-        
+           
     .container{    
         margin-bottom: .6rem;
         margin-top: .6rem;
@@ -106,8 +104,7 @@
         flex-direction: column;  
         justify-content: space-around;     
     }
-    
-    
+     
     .items__list {
         display: flex;
         flex-direction: column;
@@ -147,9 +144,12 @@
     .item-9{
         @include anim-item($delay:.52s);
     }
+    .item-10{
+        @include anim-item($delay:.59s);
+    }
     
     
-    @for $i from 1 through 9 { .item-#{$i} {animation-delay: (#{$i} + .07s)}}
+    @for $i from 1 through 10 { .item-#{$i} {animation-delay: (#{$i} + .07s)}}
     
     
     .item{

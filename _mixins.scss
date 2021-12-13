@@ -113,7 +113,7 @@
     }
 }
 
-@mixin anim-item ($delay:.1s){
+@mixin anim-item ($delay:70ms){
     animation: opac .6s cubic-bezier(0.5, 1.58, 0.34, 0.82) $delay forwards;
     
 }
@@ -131,9 +131,9 @@
         font-size: 1.5rem;     
         z-index: 1;
         opacity: 1;    
-        
+        color:  white;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0,.5);
     &:hover::before{
-        
         background: linear-gradient(45deg, #f5baef, #a05adc) ;
         transition-duration: 1s;
         font-weight: bold;
@@ -141,15 +141,7 @@
         -webkit-text-fill-color: transparent;
         z-index: 10;
         opacity:1;       
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
         }
 }
 
-@keyframes coeur{
-    0%{
-        background:opacity(0);
-    }
-
-    100%{
-        background:opacity(1);
-    }
-}

@@ -100,8 +100,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                 position: absolute;
                 top:-5rem;
                 left:2rem;
-                color:  white;
-                text-shadow: 2px 2px 2px rgba(0, 0, 0,.5);
+                
+                
 
                
     
@@ -109,7 +109,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
                     font-family: "Shrikhand";
                     font-size: 3rem;
                     margin-bottom: 1.2rem;
-                    
+                    color:  white;
+                    text-shadow: 2px 2px 2px rgba(0, 0, 0,.5);
                 }
             }
     
@@ -180,6 +181,9 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     .item-9{
         @include anim-item($delay:.52s);
+    }
+    .item-10{
+        @include anim-item($delay:.59s);
     }
     
     
