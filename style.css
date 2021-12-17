@@ -223,8 +223,8 @@ $colgreyfosc:#e4e4e4;*/
     height: 1.9rem;
   }
   .header, section, footer {
-    -webkit-animation: opac 4s linear;
-            animation: opac 4s linear;
+    -webkit-animation: opac 3s linear;
+            animation: opac 3s linear;
   }
   /* PRESENTATION*/
   .presentation {
@@ -372,6 +372,14 @@ $colgreyfosc:#e4e4e4;*/
     text-align: center;
     margin: 1.6rem auto;
     font-weight: bold;
+  }
+  .fa-ellipsis-vertical {
+    position: absolute;
+    left: 2rem;
+    width: 1rem;
+    height: 1.3rem;
+    z-index: 1;
+    color: black;
   }
   .fonctionnement__groupe__btn {
     counter-reset: fonctionnement__groupe__btn;
@@ -549,11 +557,11 @@ $colgreyfosc:#e4e4e4;*/
     opacity: 1;
   }
   .far.fa-heart:hover::before {
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s;
     background: linear-gradient(45deg, #f5baef, #a05adc);
     font-weight: bold;
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
     opacity: 1;

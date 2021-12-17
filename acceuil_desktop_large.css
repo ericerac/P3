@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @media screen and (min-width: 75rem) {
-  /*1200px*/
   * {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -28,8 +27,8 @@
     position: absolute;
     top: 50%;
     right: 50%;
-    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 5;
-            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 5;
+    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 4;
+            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.1s 4;
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
     opacity: 0;
@@ -43,8 +42,8 @@
     position: absolute;
     top: 50%;
     right: 53%;
-    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 5;
-            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 5;
+    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 4;
+            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.2s 4;
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
     opacity: 0;
@@ -58,8 +57,8 @@
     position: absolute;
     top: 50%;
     right: 47%;
-    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 5;
-            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 5;
+    -webkit-animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 4;
+            animation: spin1 0.7s cubic-bezier(1, 0.24, 0, 0.54) 0.3s 4;
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
     opacity: 0;
@@ -610,11 +609,11 @@
     opacity: 1;
   }
   .far.fa-heart:hover::before {
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s;
     background: linear-gradient(45deg, #f5baef, #a05adc);
     font-weight: bold;
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
     opacity: 1;

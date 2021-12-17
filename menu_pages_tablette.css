@@ -195,8 +195,8 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
   }
   .far.fa-heart:hover::before {
     background: linear-gradient(45deg, #f5baef, #a05adc);
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s;
     font-weight: bold;
     background-clip: text;
     -webkit-text-fill-color: transparent;
