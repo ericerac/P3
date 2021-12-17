@@ -393,6 +393,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
             transition-duration: .5s;
     font-weight: bold;
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 10;
     opacity: 1;

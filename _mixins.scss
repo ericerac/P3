@@ -139,6 +139,7 @@
         transition-duration: .5s;
         font-weight: bold;
         background-clip: text; 
+        -webkit-background-clip: text; 
         -webkit-text-fill-color: transparent;
         z-index: 10;
         opacity:1;       
@@ -156,6 +157,7 @@
         transition-duration:  .5s;
         background: linear-gradient(45deg, #f5baef, #a05adc);
         font-weight: bold;
+        background-clip: text;
         -webkit-background-clip:text; 
         -webkit-text-fill-color: transparent;
         z-index: 1;
