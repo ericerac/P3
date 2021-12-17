@@ -87,7 +87,7 @@
    position: absolute;
    top: 50%;
    right: $right;
-   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  $delay 5;
+   animation: spin1 .7s cubic-bezier(1,.24,0,.54)  $delay 4;
     transform-origin: bottom;
     opacity:0;
 }
