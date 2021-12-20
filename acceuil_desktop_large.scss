@@ -58,7 +58,7 @@ a {
     }
     
     100%{
-        transform:stranslateY(0) scale(0) ;
+        transform:translateY(0) scale(0) ;
         opacity: 1;
         
     }
@@ -161,7 +161,7 @@ a {
         &__titre{
             display: flex;
             width: 100%;
-            margin-top: 2.3rem auto 1rem;
+            margin: 2.3rem auto 1rem auto;
             justify-content: center;
             text-align:center;
             text-align-last: center;
@@ -210,7 +210,7 @@ a {
     margin: 1rem auto 0 auto;
     padding-bottom: 3rem;
     display: block;
-    align-items: left;
+   
 
     &__titre{
         display: flex;

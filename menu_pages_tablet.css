@@ -76,6 +76,14 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     font-family: "roboto", sans-serif;
     min-width: 20rem;
   }
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
   .header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -332,7 +340,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     margin-right: 4.3rem;
   }
   .entrees__items__titre, .plats__items__titre, .desserts__items__titre {
-    margin: .7rem 0 .5 0;
+    margin: .7rem 0 .5rem 0;
     font-size: 1.1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -445,9 +453,6 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
             flex-direction: column;
     background-color: #353535;
     margin: 0 auto;
-    -webkit-box-align: left;
-        -ms-flex-align: left;
-            align-items: left;
   }
   .footer__logo {
     width: 80%;

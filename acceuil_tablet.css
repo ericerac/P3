@@ -632,9 +632,6 @@
             flex-direction: column;
     background-color: #353535;
     margin: 0 auto;
-    -webkit-box-align: left;
-        -ms-flex-align: left;
-            align-items: left;
   }
   .footer__logo {
     width: 80%;
