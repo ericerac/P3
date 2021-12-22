@@ -76,8 +76,8 @@
       opacity: 1;
     }
     100% {
-      -webkit-transform: stranslateY(0) scale(0);
-              transform: stranslateY(0) scale(0);
+      -webkit-transform: translateY(0) scale(0);
+              transform: translateY(0) scale(0);
       opacity: 1;
     }
   }
@@ -93,8 +93,8 @@
       opacity: 1;
     }
     100% {
-      -webkit-transform: stranslateY(0) scale(0);
-              transform: stranslateY(0) scale(0);
+      -webkit-transform: translateY(0) scale(0);
+              transform: translateY(0) scale(0);
       opacity: 1;
     }
   }
@@ -332,9 +332,6 @@
     height: auto;
     margin: 1rem auto 1rem auto;
     display: block;
-    -webkit-box-align: left;
-        -ms-flex-align: left;
-            align-items: left;
   }
   .fonctionnement__titre {
     display: -webkit-box;

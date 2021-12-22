@@ -22,13 +22,13 @@
     @keyframes opac{
          0%{ 
              opacity:(0);
-             transform:translateY(20px);
+             transform:translateY(20px) scale(0);
          }
          
          
         100%{ 
             opacity:(1);
-            transform :translateY(0px);
+            transform :translateY(0px) scale(1);
         }
     }
     
@@ -40,6 +40,15 @@
         min-width: 20rem;
     }
     
+    h4{
+        margin:0;
+        padding:0;
+    }
+    h3{
+        margin:0;
+        padding:0;
+    }
+
     .header{
         @include header(visible);
         min-width: 20rem;
@@ -213,7 +222,7 @@
                             text-overflow: ellipsis;
                             white-space: nowrap;
                             overflow: hidden;
-                            padding-top:.2rem;
+                            padding-top:.7rem;
                         }
                                               
                         &__detail{

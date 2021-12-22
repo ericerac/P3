@@ -34,15 +34,15 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     @keyframes opac{
          0%{
-             scale:(0);
+            
              opacity:(0);
-             transform:translateY(10px)
+             transform:translateY(10px)  scale(0);
          }      
                  
         100%{
-            scale:(1);
+            
             opacity:(1);
-            transform :translateY(0px)
+            transform :translateY(0px) scale(1);
         }
     }
     
