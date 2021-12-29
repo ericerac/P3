@@ -351,7 +351,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.7);
   }
   .entrees__items__prix, .plats__items__prix, .desserts__items__prix {
     position: relative;
