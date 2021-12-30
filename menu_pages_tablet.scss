@@ -194,7 +194,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     
     
-    @for $i from 1 through 9 { &__item-#{$i} {$delay: #{$i} + 60ms}}
+    
     
     
     .item{
