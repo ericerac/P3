@@ -128,38 +128,38 @@
     
     
     .item-1{
-        @include anim-item ($delay:.01s);
+        @include anim-item (.01s);
     }
     .item-2{
-        @include anim-item($delay:.07s);
+        @include anim-item(.07s);
     }
     .item-3{
-        @include anim-item($delay:.13s);
+        @include anim-item(.13s);
     }
     .item-4{
-        @include anim-item($delay:.2s);
+        @include anim-item(.2s);
     }
     .item-5{
-        @include anim-item($delay:.27s);
+        @include anim-item(.27s);
     }
     .item-6{
-        @include anim-item($delay:.34s);
+        @include anim-item(.34s);
     }
     .item-7{
-        @include anim-item($delay:.40s);
+        @include anim-item(.40s);
     }
     .item-8{
-        @include anim-item($delay:.46s);
+        @include anim-item(.46s);
     }
     .item-9{
-        @include anim-item($delay:.52s);
+        @include anim-item(.52s);
     }
     .item-10{
-        @include anim-item($delay:.59s);
+        @include anim-item(.59s);
     }
     
     
-    @for $i from 1 through 10 { .item-#{$i} {animation-delay: (#{$i} + .07s)}}
+   
     
     
     .item{
@@ -217,7 +217,7 @@
                     }
                        
                         &__titre{
-                            margin:.7rem 0 .5 0 ;
+                            margin:.7rem 0 .5rem 0 ;
                             font-size: 1.1rem;
                             text-overflow: ellipsis;
                             white-space: nowrap;
