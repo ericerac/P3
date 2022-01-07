@@ -1,28 +1,27 @@
+
 @import "variables";
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import "mixins.scss";
-
-    
-        
-    
-
-/* $colpri:#9356DC;
+$colpri:#9356DC;
 $colsec:#FF79DA;
 $colter:#99E2D0;
 $colgrey:#f4f4f4;
 $colfoot:#000000;
-<<<<<<< Updated upstream
-$colgreyfosc:#e4e4e4;*/
-@media screen and (max-width:769px){
+$colgreyfosc:#e4e4e4;
+$col-titre-detail-section-menu:rgba(0,0,0,.5);
 
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import "composants/heart";
+
+    @media screen and (min-width:75rem) {  
+        
 *{box-sizing: border-box;}
 
 
 body{
     
     font-family: 'Roboto', sans-serif;
-    margin: 0 auto;  
+    margin: 0 ;  
     min-width: 20rem;  
 }
 
@@ -115,10 +114,14 @@ a {
     @include header(hidden);
 }
 .header, section , footer{
-    animation: opac 3s linear ;
+    animation: opac 4s linear ;
 }
 
+/* HEADER */
 
+.header{
+    @include header(hidden);
+}
 
 /* PRESENTATION*/
 
@@ -130,7 +133,7 @@ a {
     background-color: $colgrey;
     display: block;
     justify-content: center;
-    margin: .6rem auto;;
+    margin: 10px auto;;
     
     &__localisation{
         display: flex;
@@ -146,7 +149,7 @@ a {
         border-bottom: none;
         
         &__logo{
-            margin: .6rem;
+            margin: 10px;
 
         }
     }
@@ -157,8 +160,8 @@ a {
         
         &__titre{
             display: flex;
-            width: 15rem;
-            margin: 2.3rem auto 1rem;
+            width: 100%;
+            margin: 2.3rem auto 1rem auto;
             justify-content: center;
             text-align:center;
             text-align-last: center;
@@ -179,15 +182,15 @@ a {
         }
 
         &__btn{
-            width: 13.6rem;
-            margin: 2rem auto;
+            max-width: 18rem;
+            margin: 2.4rem auto;
             background: linear-gradient(170deg, #ec73da, #9d60db) ;
             text-align:center;
             vertical-align: middle;
-            padding: 1rem;
-            border-radius: 2rem;
+            padding: 20px;
+            border-radius: 30px;
             color:white;
-            font-size: 1rem;
+            font-size: 17px;
             box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
             transition-duration: 150ms;
             @include btn;
@@ -197,31 +200,32 @@ a {
     }
 
 }
+
 /* FONCTIONNEMENT*/
 
 .fonctionnement{
-    width: 85%;
-    max-width: 35rem;
+    display: flex;
+    width: 100%;
     height: auto;
     margin: 1rem auto 0 auto;
     padding-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
+    display: block;
    
 
     &__titre{
         display: flex;
+        width: 95%;
+        margin: 0 auto;
         text-align:left;
     }
     &__btn{
         display: flex;
-        width: 100%;
+        width: 32%;
         height: 4.6rem;
         background-color:$colgrey ;
         border-radius: 1.25rem;
-        margin:.7rem auto;
-        align-items:center;
-        align-content: center;
+        margin:1.1rem auto;
+        align-items: center;
         justify-content: flex-start;
         position: relative;
         box-shadow: .3rem .3rem 1rem .1rem rgba(0, 0, 0,.15);
@@ -230,56 +234,56 @@ a {
             counter-increment: fonctionnement__groupe__btn;
             content: counter(fonctionnement__groupe__btn);
             position: absolute;
-            width: 24px;
-            height: 20px;
+            width: 1.7rem;
+            height: 1.25rem;
             background-color: $colpri;
-            left:-10px;
+            left:-.85rem;
             border-radius: 50%;
             text-align: center;
             color:white;
-            font-size: 13px;
-            padding-top: 5px;
-                      
-        
-        
-    }   
+            font-size: .9rem;
+            padding-top: .3rem;
+            
+           
+        }
+          
         &__logo{
             position: absolute;
-            
             bottom:35%;
             left:2.2rem;
             color:grey;
             font-size: 1.3rem;
-
-            
-            
         }
 
         &__txt{
             text-align: center;
-            margin: 1.6rem auto;
-            font-weight: bold;
+            margin: 1.5rem auto;
         }
     }
 
 }
-
 .fonctionnement__groupe__btn {
+    display:flex;
+    flex-direction: row;
+    width:95%;
+    margin: 0 auto;
+    justify-content: space-evenly;
     counter-reset: fonctionnement__groupe__btn;
     padding: 0;
     list-style-type: none;
             
 }
 
-/* RESTAURANTS*/
 
+// RESTAURANTS
+                // ANNONCE
 .la_palette_du_gout{
     @include annonce("Nouveau");
 }
 .la_note_enchantee{
     @include annonce("Nouveau");
 }
-.a_la_française{
+.À_la_française{
     @include annonce(vide);
 }
 .le_delice_des_sens{
@@ -288,56 +292,47 @@ a {
 
 
 .section_rest{
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
     height: auto;
     background-color: $colgrey;
-    width: 100%;
     margin:0 auto;
-    padding-bottom: 3rem;
-    
+    padding-bottom: 1rem;
+   
     &__titre{
+        grid-column: 1/2;
+        grid-row: 1/2;
         width: 90%;
-        max-width: 35rem;
-        margin:1rem auto;
-       /* margin: 1rem auto;text-align: center;  MEDIA QUERIES*/ 
-    }
-    &__groupe__cards{
-        display: flex;
-        width: 100%;
-        max-width: 40rem;
-        margin: 0 auto;
-        flex-direction: column;
-        justify-content: space-evenly;
+        margin:1rem 1%;
     }
 }
 
-
 .section_rest__cards{
         display:flex;
-        width: 90%;
+        width: 85%;
         height: 15rem;
+        min-width: 18rem;
         position:relative;
-        margin: .8rem auto;
+        margin: .7rem auto;
         box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
         border-radius:1.2rem;
 
         &__img{
-            min-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 15rem;
             border-radius:1.2rem;
-            object-fit: cover;
-            object-position: 0 -5rem;
-            position: relative;
-            
+            position: relative;  
+            object-fit: cover;    
+        }     
+       
         
-        }            
         &__txts{
             display:block;
             width: 100%;
-            height: 4.75rem;
+            height: 4.7rem;
             margin: 0;
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 1.25rem 1.25rem;
             background-color: white;
             position:absolute;
             bottom: 0px;
@@ -349,31 +344,58 @@ a {
         }
         &__txts__lieu{
             display: flex;
-            margin: .3rem 0 0 1rem;
+            margin: .5rem 0 0 1rem;
             align-items: center;
             justify-content: space-between;
-            font-size: 1.1rem;
-            color:rgba(0,0,0,.6);
+            font-size: .9rem;
+            font-weight:100;
         }
         &__txts__coeur{
             position: absolute;
-            font-size: 23px;
-            
-            bottom:30px;
-            right:25px;
+            font-size: 1.4rem;
+            bottom:1.9rem;
+            right:1.6rem;
             z-index: 1;
-            animation:transform 250ms ease-out;
-            cursor: pointer;
-        
-        }
-        
-
+            animation: transform 250ms ease-out;
+            cursor: pointer;        
+        }       
     }
 
+    .section_rest__groupe__cards{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-evenly;
+        max-width: 100%;
+        
+    }
+// GRID
+    .item1{
+            display:flex;
+            grid-column: 1/2;
+            grid-row: 2/3;   
+    }
+    .item2{
+      
+            grid-column: 2/3;
+            grid-row: 2/3;            
+    }
+    .item3{
+       
+            grid-column: 3/4;
+            grid-row: 2/3;           
+    }
+    .item4{
+   
+            grid-column: 4/5;
+            grid-row: 2/3;           
+    }
 
+// ------------------
 
 .far.fa-heart{
     @include heart-mobile;
+       
+    }
     
 }
 
@@ -386,4 +408,4 @@ a {
 }
 
 
-}
+

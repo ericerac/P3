@@ -65,7 +65,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5)*/
     }
     .header{
         @include header(visible);
-        min-width: 20rem;
+        min-width: 19rem;
     }
     
     .main{

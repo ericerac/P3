@@ -1,20 +1,19 @@
 
-@import "variables";
-$colpri:#9356DC;
-$colsec:#FF79DA;
-$colter:#99E2D0;
-$colgrey:#f4f4f4;
-$colfoot:#000000;
-$colgreyfosc:#e4e4e4;
-$col-titre-detail-section-menu:rgba(0,0,0,.5);
-
+@charset "UTF-8";
 @import "variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "mixins.scss";
+@import "animations/loader.scss";
 
-    @media screen and (min-width:75rem) {  
+    
         
+    
+
+
+
+@media screen and (max-width:769px){
+
 *{box-sizing: border-box;}
 
 
@@ -114,14 +113,10 @@ a {
     @include header(hidden);
 }
 .header, section , footer{
-    animation: opac 4s linear ;
+    animation: opac 3s linear ;
 }
 
-/* HEADER */
 
-.header{
-    @include header(hidden);
-}
 
 /* PRESENTATION*/
 
@@ -133,7 +128,7 @@ a {
     background-color: $colgrey;
     display: block;
     justify-content: center;
-    margin: 10px auto;;
+    margin: .6rem auto;;
     
     &__localisation{
         display: flex;
@@ -149,7 +144,7 @@ a {
         border-bottom: none;
         
         &__logo{
-            margin: 10px;
+            margin: .6rem;
 
         }
     }
@@ -160,8 +155,8 @@ a {
         
         &__titre{
             display: flex;
-            width: 100%;
-            margin: 2.3rem auto 1rem auto;
+            width: 15rem;
+            margin: 2.3rem auto 1rem;
             justify-content: center;
             text-align:center;
             text-align-last: center;
@@ -182,15 +177,15 @@ a {
         }
 
         &__btn{
-            max-width: 18rem;
-            margin: 2.4rem auto;
+            width: 13.6rem;
+            margin: 2rem auto;
             background: linear-gradient(170deg, #ec73da, #9d60db) ;
             text-align:center;
             vertical-align: middle;
-            padding: 20px;
-            border-radius: 30px;
+            padding: 1rem;
+            border-radius: 2rem;
             color:white;
-            font-size: 17px;
+            font-size: 1rem;
             box-shadow: .1rem .1rem .3rem rgba(0, 0, 0,.4);
             transition-duration: 150ms;
             @include btn;
@@ -200,32 +195,31 @@ a {
     }
 
 }
-
 /* FONCTIONNEMENT*/
 
 .fonctionnement{
-    display: flex;
-    width: 100%;
+    width: 85%;
+    max-width: 35rem;
     height: auto;
     margin: 1rem auto 0 auto;
     padding-bottom: 3rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
    
 
     &__titre{
         display: flex;
-        width: 95%;
-        margin: 0 auto;
         text-align:left;
     }
     &__btn{
         display: flex;
-        width: 32%;
+        width: 100%;
         height: 4.6rem;
         background-color:$colgrey ;
         border-radius: 1.25rem;
-        margin:1.1rem auto;
-        align-items: center;
+        margin:.7rem auto;
+        align-items:center;
+        align-content: center;
         justify-content: flex-start;
         position: relative;
         box-shadow: .3rem .3rem 1rem .1rem rgba(0, 0, 0,.15);
@@ -234,56 +228,56 @@ a {
             counter-increment: fonctionnement__groupe__btn;
             content: counter(fonctionnement__groupe__btn);
             position: absolute;
-            width: 1.7rem;
-            height: 1.25rem;
+            width: 24px;
+            height: 20px;
             background-color: $colpri;
-            left:-.85rem;
+            left:-10px;
             border-radius: 50%;
             text-align: center;
             color:white;
-            font-size: .9rem;
-            padding-top: .3rem;
-            
-           
-        }
-          
+            font-size: 13px;
+            padding-top: 5px;
+                      
+        
+        
+    }   
         &__logo{
             position: absolute;
+            
             bottom:35%;
             left:2.2rem;
             color:grey;
             font-size: 1.3rem;
+
+            
+            
         }
 
         &__txt{
             text-align: center;
-            margin: 1.5rem auto;
+            margin: 1.6rem auto;
+            font-weight: bold;
         }
     }
 
 }
+
 .fonctionnement__groupe__btn {
-    display:flex;
-    flex-direction: row;
-    width:95%;
-    margin: 0 auto;
-    justify-content: space-evenly;
     counter-reset: fonctionnement__groupe__btn;
     padding: 0;
     list-style-type: none;
             
 }
 
+/* RESTAURANTS*/
 
-// RESTAURANTS
-                // ANNONCE
 .la_palette_du_gout{
     @include annonce("Nouveau");
 }
 .la_note_enchantee{
     @include annonce("Nouveau");
 }
-.À_la_française{
+.a_la_française{
     @include annonce(vide);
 }
 .le_delice_des_sens{
@@ -292,47 +286,56 @@ a {
 
 
 .section_rest{
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: auto;
     background-color: $colgrey;
+    width: 100%;
     margin:0 auto;
-    padding-bottom: 1rem;
-   
+    padding-bottom: 3rem;
+    
     &__titre{
-        grid-column: 1/2;
-        grid-row: 1/2;
         width: 90%;
-        margin:1rem 1%;
+        max-width: 35rem;
+        margin:1rem auto;
+       /* margin: 1rem auto;text-align: center;  MEDIA QUERIES*/ 
+    }
+    &__groupe__cards{
+        display: flex;
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
+
 .section_rest__cards{
         display:flex;
-        width: 85%;
+        width: 90%;
         height: 15rem;
-        min-width: 18rem;
         position:relative;
-        margin: .7rem auto;
+        margin: .8rem auto;
         box-shadow: 2px 2px 8px 2px rgba(0, 0, 0,.1);
         border-radius:1.2rem;
 
         &__img{
-            width: 100%;
-            height: 15rem;
+            min-width: 100%;
+            height: auto;
             border-radius:1.2rem;
-            position: relative;  
-            object-fit: cover;    
-        }     
-       
+            object-fit: cover;
+            object-position: 0 -5rem;
+            position: relative;
+            
         
+        }            
         &__txts{
             display:block;
             width: 100%;
-            height: 4.7rem;
+            height: 4.75rem;
             margin: 0;
-            border-radius: 0 0 1.25rem 1.25rem;
+            border-radius: 0 0 20px 20px;
             background-color: white;
             position:absolute;
             bottom: 0px;
@@ -344,58 +347,31 @@ a {
         }
         &__txts__lieu{
             display: flex;
-            margin: .5rem 0 0 1rem;
+            margin: .3rem 0 0 1rem;
             align-items: center;
             justify-content: space-between;
-            font-size: .9rem;
-            font-weight:100;
+            font-size: 1.1rem;
+            color:rgba(0,0,0,.6);
         }
         &__txts__coeur{
             position: absolute;
-            font-size: 1.4rem;
-            bottom:1.9rem;
-            right:1.6rem;
+            font-size: 23px;
+            
+            bottom:30px;
+            right:25px;
             z-index: 1;
-            animation: transform 250ms ease-out;
-            cursor: pointer;        
-        }       
-    }
-
-    .section_rest__groupe__cards{
-        display:grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: space-evenly;
-        max-width: 100%;
+            animation:transform 250ms ease-out;
+            cursor: pointer;
         
-    }
-// GRID
-    .item1{
-            display:flex;
-            grid-column: 1/2;
-            grid-row: 2/3;   
-    }
-    .item2{
-      
-            grid-column: 2/3;
-            grid-row: 2/3;            
-    }
-    .item3{
-       
-            grid-column: 3/4;
-            grid-row: 2/3;           
-    }
-    .item4{
-   
-            grid-column: 4/5;
-            grid-row: 2/3;           
+        }
+        
+
     }
 
-// ------------------
+
 
 .far.fa-heart{
     @include heart-mobile;
-       
-    }
     
 }
 
@@ -408,4 +384,4 @@ a {
 }
 
 
-
+}

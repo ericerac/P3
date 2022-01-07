@@ -1,0 +1,52 @@
+@mixin footer{
+    
+    width: 100%;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $colfoot;
+    margin:0 auto;
+    
+    
+
+    &__logo{
+        width: 80%;
+        margin: 2rem auto .5rem 3rem;
+        color:$coltxtfoot;
+        font-family: "Shrikhand";
+        font-size: 1.1rem;
+
+        
+    }
+
+    &__list{
+        display:flex;
+        flex-direction: column;
+        width: 80%;
+        list-style-type: none;
+        margin:0;
+        padding-top: .2rem;
+
+        &__liens{
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto 0 0 ;
+            padding: .15rem .3rem;
+            align-items: baseline;
+            color:white;
+            &:visited{
+                color:white;
+            }
+            &__logo{
+                width: 1.3rem;
+            }
+        
+
+            &__txt{
+                    margin: 0rem ;
+                padding-left: .2rem;
+            }
+        }
+    }
+}
