@@ -37,7 +37,9 @@
             padding: .15rem .3rem;
             align-items: baseline;
             color:white;
-
+            &:visited{
+                color:white;
+            }
             &__logo{
                 width: 1.3rem;
             }
