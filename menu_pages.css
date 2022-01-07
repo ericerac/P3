@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@media (max-width: 768px) {
+@media only screen and (min-width: 375px) and (max-width: 768px) {
   @-webkit-keyframes mgr {
     100% {
       margin-right: 6rem;
@@ -56,6 +56,10 @@
       -webkit-transform: translateY(0px) scale(1);
               transform: translateY(0px) scale(1);
     }
+  }
+  html {
+    margin: 0;
+    padding: 0;
   }
   body {
     margin: 0;
