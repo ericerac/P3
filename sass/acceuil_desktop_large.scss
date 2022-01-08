@@ -11,7 +11,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5);
 @import "variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import "composants/heart";
+@import "mixins";
 
     @media screen and (min-width:75rem) {  
         
@@ -34,7 +34,6 @@ a {
 }
  
 .spinner__spin1{
-  
     @include spin-load($colpri,.1s);
   
   }
