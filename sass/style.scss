@@ -278,10 +278,10 @@ a {
     @include annonce("Nouveau");
 }
 .a_la_française{
-    @include annonce(vide);
+    @include annonce("");
 }
 .le_delice_des_sens{
-    @include annonce(vide);
+    @include annonce("");
 }
 
 

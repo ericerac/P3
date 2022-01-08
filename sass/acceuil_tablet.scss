@@ -21,7 +21,7 @@ $col-titre-detail-section-menu:rgba(0,0,0,.5);
 body{
     
     font-family: 'Roboto', sans-serif;
-    margin: 0px auto;  
+    margin: 1px auto;  
     min-width: 20rem;  
 }
 
@@ -280,10 +280,10 @@ a {
     @include annonce("Nouveau");
 }
 .À_la_française{
-    @include annonce(vide);
+    @include annonce("");
 }
 .le_delice_des_sens{
-    @include annonce(vide);
+    @include annonce("");
 }
 
 

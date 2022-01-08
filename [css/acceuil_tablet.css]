@@ -9,7 +9,7 @@
 
   body {
     font-family: "Roboto", sans-serif;
-    margin: 1px auto;
+    margin: 0px auto;
     min-width: 20rem;
   }
 
@@ -328,7 +328,7 @@
   }
 
   .À_la_française::after {
-    content: "";
+    content: vide;
     padding: 0rem 0.7rem;
     height: 1.8rem;
     line-height: 1.8rem;
@@ -337,7 +337,7 @@
     font-size: 0.9rem;
     color: #067a3a;
     vertical-align: center;
-    
+    background: #99E2D0;
     text-align: center;
     position: absolute;
     top: 0.8rem;
@@ -346,7 +346,7 @@
   }
 
   .le_delice_des_sens::after {
-    content: "";
+    content: vide;
     padding: 0rem 0.7rem;
     height: 1.8rem;
     line-height: 1.8rem;
@@ -355,7 +355,7 @@
     font-size: 0.9rem;
     color: #067a3a;
     vertical-align: center;
-    
+    background: #99E2D0;
     text-align: center;
     position: absolute;
     top: 0.8rem;
@@ -523,4 +523,4 @@
   }
 }
 
-/*# sourceMappingURL=acceuil_tablet.css.map */
+/*# sourceMappingURL=acceuil_tablet.css%5D.map */
